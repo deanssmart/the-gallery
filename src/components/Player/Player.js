@@ -1,9 +1,8 @@
 import * as THREE from "three"
 import React, { useEffect, useRef, useState } from "react"
 import { useSphere } from "use-cannon"
-import { useThree, useFrame, stateContext } from "react-three-fiber"
+import { useThree, useFrame } from "react-three-fiber"
 
-const SPEED = 5
 const keys = { KeyW: "forward", KeyS: "backward", KeyA: "left", KeyD: "right", Space: "jump", ShiftLeft:"speed" }
 const moveFieldByKey = (key) => keys[key]
 const direction = new THREE.Vector3()
@@ -54,11 +53,11 @@ const usePlayerControls = () => {
 }
 
 export const Player = (props) => {
-  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 1, 5], ...props }))
+  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 1, 7], ...props }))
   const { forward, backward, left, right, jump, speed } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
-  useEffect(() => void api.velocity.subscribe((v) => (velocity.current = v)), [])
+  useEffect(() =>  api.velocity.subscribe((v) => (velocity.current = v)), [api.velocity])
   useFrame(() => {
     camera.position.copy(ref.current.position)
     frontVector.set(0, 0, Number(backward) - Number(forward))
