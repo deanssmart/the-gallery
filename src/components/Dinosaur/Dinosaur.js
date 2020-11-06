@@ -5,11 +5,12 @@ import * as THREE from 'three';
 
 
 const Dinosaur = (props) => {
-    const [ref] = useBox(() => ({ mass: 1, type: "Dynamic", position: [0, 100, 0], ...props }))
+    const [ref] = useBox(() => ({ mass: 1, type: "Dynamic", position: [0, 0, 0], ...props }))
+    // console.log(useBox())
     const [model, setModel] = useState()
     const texture =  new THREE.TextureLoader().load('/assets/3D/textures/trex_regular_baseColor.jpeg')
     texture.flipY=false;
-    texture.wrapS=true;
+    texture.wrapS = THREE.RepeatWrapping;
 
     useEffect(() => {
         new GLTFLoader().load('/assets/3D/scene.gltf', setModel)
