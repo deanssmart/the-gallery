@@ -3,8 +3,11 @@ import * as THREE from 'three';
 import { Canvas } from 'react-three-fiber';
 import Box from '../Box/Box';
 import Controls from '../Controls/Controls';
+import { Sky, PointerLockControls } from "@react-three/drei"
 import Plane from '../Plane/Plane';
 import Dinosaur from '../Dinosaur/Dinosaur';
+import { Player } from '../Player/Player';
+import { Physics } from 'use-cannon';
 
 function App() {
   return (
@@ -15,13 +18,19 @@ function App() {
         gl.shadowMap.type = THREE.PCFSoftShadowMap
       }}
     >
+      {/* <Sky sunPosition={[100, 10, 100]} /> */}
       <fog attach="fog" args={["white", 5, 25]}/>
-      <Controls />
+      {/* <Controls /> */}
+      <PointerLockControls />
       <ambientLight intensity={0.1}/>
       <spotLight intensity={1} position= {[0, 15, 20]} penumbra={1} castShadow />
-      {/* <Box /> */}
+      <Box />w
       <Dinosaur />
-      <Plane />
+      <Physics gravity={[0, -30, 0]}>
+        <Plane />
+        <Player />
+      </Physics>
+
     </Canvas>
   );
 }

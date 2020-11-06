@@ -8,7 +8,7 @@ const Box = () => {
     const props = useSpring({
         scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
         color: hovered ? "blue" : "gray",
-        position: active ? [0, 0.2, 0] : [0, 0, 0]
+        position: active ? [0, 0.7, 0] : [0, 0.5, 0]
      })
 
     return (
