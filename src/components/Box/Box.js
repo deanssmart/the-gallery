@@ -7,7 +7,8 @@ const Box = () => {
     const [active, setActive] = useState(false)
     const props = useSpring({
         scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-        color: hovered ? "blue" : "gray"
+        color: hovered ? "blue" : "gray",
+        position: active ? [0, 0.2, 0] : [0, 0, 0]
      })
 
     return (
@@ -18,6 +19,8 @@ const Box = () => {
             onPointerOut={() => setHovered(false)}
             onClick={() => setActive(!active)}
             scale={props.scale}
+            position={props.position}
+            castShadow
         >
             <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
             <a.meshPhysicalMaterial 
