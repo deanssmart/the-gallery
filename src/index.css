@@ -8,7 +8,21 @@ canvas {
   padding: 0;
 }
 
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  cursor: pointer;
+  border: 2px solid white;
+}
+
 body {
+  background: #272730;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

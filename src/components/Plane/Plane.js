@@ -6,7 +6,7 @@ const Plane = (props) => {
     return (
         <mesh ref={ref} receiveShadow>
             <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-            <meshPhysicalMaterial attach="material" color="White" />
+            <meshPhysicalMaterial attach="material" color="white" />
         </mesh>
     );
 }

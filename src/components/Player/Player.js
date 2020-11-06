@@ -11,9 +11,10 @@ const sideVector = new THREE.Vector3()
 
 const usePlayerControls = () => {
   const [movement, setMovement] = useState({ forward: false, backward: false, left: false, right: false, jump: false, speed: 5 })
+
   useEffect(() => {
     const handleKeyDown = (e) => {
-        switch( e.code) {
+        switch(e.code) {
             case "KeyW": //forward
             case "KeyA": // left           
             case "KeyS": // backwards           
@@ -28,7 +29,7 @@ const usePlayerControls = () => {
         }
     }   
     const handleKeyUp = (e) => {
-        switch( e.code) {
+        switch(e.code) {
             case "KeyW": //forward
             case "KeyA": // left           
             case "KeyS": // backwards           
