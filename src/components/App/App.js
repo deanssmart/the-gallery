@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { Canvas } from 'react-three-fiber';
 import Box from '../Box/Box';
@@ -33,13 +33,13 @@ const App = () => {
       }}
     >
       {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
-      <fog attach="fog" args={["white", 2, 15]}/>
+      {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>}
       {/* <Controls /> */}
       <PointerLockControls />
-      <ambientLight intensity={0.1}/>
-      <spotLight intensity={1} position= {[0, 15, 20]} penumbra={1} castShadow />
-      {/* <Box /> */}
-      <Dinosaur />
+      <ambientLight intensity={night ? 0.05 : 0.5}/>
+      <spotLight intensity={0.8} position= {[0, 15, 20]} penumbra={1} castShadow />
+      <Box />
+      {/* <Dinosaur /> */}
       <Physics gravity={[0, -30, 0]}>
         <Plane />
         <Player />
