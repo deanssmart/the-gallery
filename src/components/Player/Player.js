@@ -54,7 +54,7 @@ const usePlayerControls = () => {
 }
 
 export const Player = (props) => {
-  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 1, 7], ...props }))
+  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 10, 30], ...props }))
   const { forward, backward, left, right, jump, speed } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
@@ -65,7 +65,7 @@ export const Player = (props) => {
     sideVector.set(Number(left) - Number(right), 0, 0)
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(speed).applyEuler(camera.rotation)
     api.velocity.set(direction.x, velocity.current[1], direction.z)
-    if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.001) api.velocity.set(velocity.current[0], 10, velocity.current[2])
+    if (jump && Math.abs(velocity.current[1].toFixed(2)) < 100) api.velocity.set(velocity.current[0], 10, velocity.current[2])
   })
   return <mesh ref={ref} />
 }

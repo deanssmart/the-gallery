@@ -33,16 +33,18 @@ const App = () => {
       }}
     >
       {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
-      {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>}
+      {/* {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>} */}
       {/* <Controls /> */}
       <PointerLockControls />
       <ambientLight intensity={night ? 0.05 : 0.5}/>
       <spotLight intensity={0.8} position= {[0, 15, 20]} penumbra={1} castShadow />
-      <Box />
-      {/* <Dinosaur /> */}
+      
+      
       <Physics gravity={[0, -30, 0]}>
+        <Dinosaur />
         <Plane />
-        <Player />
+        <Player />       
+        <Box />
       </Physics>
 
     </Canvas>

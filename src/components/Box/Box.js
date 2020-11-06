@@ -1,11 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useSpring, a } from 'react-spring/three';
+import { useBox } from "use-cannon";
 
-const Box = () => {
-    const meshRef = useRef();
+const Box = (props) => {
+    const [ref] = useBox(() => ({ mass: Math.random() * 100, position: [Math.random() * 10, Math.random() * 10, Math.random() * 10], ...props }))
     const [hovered, setHovered] = useState(false)
     const [active, setActive] = useState(false)
-    const props = useSpring({
+    const springProps = useSpring({
         scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
         color: hovered ? "blue" : "gray",
         position: active ? [0, 0.7, 0] : [0, 0.5, 0]
@@ -14,18 +15,18 @@ const Box = () => {
     return (
         
         <a.mesh 
-            ref={meshRef}
+            ref={ref}
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
             onClick={() => setActive(!active)}
-            scale={props.scale}
-            position={props.position}
+            scale={springProps.scale}
+            position={springProps.position}
             castShadow
         >
             <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
             <a.meshPhysicalMaterial 
                 attach="material" 
-                color={props.color} />
+                color={springProps.color} />
         </a.mesh>
     );
 }
