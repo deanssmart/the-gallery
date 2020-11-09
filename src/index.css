@@ -8,20 +8,48 @@ canvas {
   padding: 0;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #272730c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay > div {
+  position: relative;
+  margin-left: 250px;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 
 .dot {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 2px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   transform: translate3d(-50%, -50%, 0);
   cursor: pointer;
   border: 2px solid white;
 }
 
+.disabled {
+  cursor: not-allowed;
+}
+
 body {
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior-y: none;
   background: #272730;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,4 +62,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
