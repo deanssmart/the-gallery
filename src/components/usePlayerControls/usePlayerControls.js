@@ -7,7 +7,8 @@ const moveFieldByKey = (key) => {
         KeyA: "left",
         KeyD: "right", 
         Space: "jump", 
-        ShiftLeft:"speed"
+        ShiftLeft:"speed",
+        KeyF: "fly"
      }
      return keys[key]
 }
@@ -19,17 +20,18 @@ const usePlayerControls = () => {
         left: false,
         right: false,
         jump: false,
-        speed: 5
+        speed: 5,
+        fly: false,
     })
 
-    useEffect(() => {
+    useEffect(() => {        
         const handleKeyDown = (e) => {
             switch(e.code) {
                 case "KeyW": //forward
                 case "KeyA": // left           
                 case "KeyS": // backwards           
                 case "KeyD": // right    
-                case "Space": // jump
+                case "Space": // jump                
                     setMovement((m) => ({
                         ...m, 
                         [moveFieldByKey(e.code)]: true 
@@ -41,6 +43,12 @@ const usePlayerControls = () => {
                         [moveFieldByKey(e.code)]: 10 
                     }))
                     return;
+                case "KeyF":
+                    setMovement((m) => ({ 
+                        ...m, 
+                        [moveFieldByKey(e.code)]: !movement.fly 
+                    }))
+                    return;                
                 default: return;
             }
         }
@@ -51,7 +59,7 @@ const usePlayerControls = () => {
                 case "KeyA": // left           
                 case "KeyS": // backwards           
                 case "KeyD": // right    
-                case "Space": // jump
+                case "Space": // jump                
                     setMovement((m) => ({
                         ...m, 
                         [moveFieldByKey(e.code)]: false 
@@ -74,7 +82,7 @@ const usePlayerControls = () => {
             document.removeEventListener("keydown", handleKeyDown)
             document.removeEventListener("keyup", handleKeyUp)
         }
-    }, [])
+    }, [movement.fly])
     return movement
 }
 

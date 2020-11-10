@@ -43,6 +43,7 @@ function Overlay() {
 				Jump: SPACE<br/>
         Run: SHIFT<br/><br/>
 				
+        Flight Mode: F<br/>
         Night Mode: N<br/>
           </div>
         </div>
