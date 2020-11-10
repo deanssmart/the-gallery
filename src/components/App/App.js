@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { Canvas } from 'react-three-fiber';
 import Box from '../Box/Box';
@@ -43,7 +43,9 @@ const App = () => {
         
         
         <Physics gravity={[0, -30, 0]}>
-          <Dinosaur />
+          <Suspense fallback={null}>
+            <Dinosaur url="/assets/3D/scene.gltf" />
+          </Suspense>
           <Plane />
           <Player />       
           <Box />
