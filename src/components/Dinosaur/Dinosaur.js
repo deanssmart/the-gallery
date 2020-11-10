@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLoader } from 'react-three-fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useBox } from "use-cannon";
+// import { useSphere } from "use-cannon";
 import * as THREE from 'three';
 
 
 const Dinosaur = (props) => {
-    const [ref] = useBox(() => ({ mass: 10, type: "Dynamic", position: [0, 0, 0], ...props }))
+    // const [ref] = useSphere(() => ({ mass: 10, type: "Dynamic", position: [0, 20, 0], args: 1 }))
     // console.log(useBox())
     // const group = useRef()
     const { nodes, materials } = useLoader(GLTFLoader, "/assets/3D/scene.gltf")
@@ -19,12 +19,13 @@ const Dinosaur = (props) => {
 
     return (     
             <mesh 
-                ref={ref}
+                // ref={ref}
                 scale={[0.1, 0.1, 0.1]} 
                 geometry={model.geometry} 
                 material={newMaterial}
                 castShadow 
                 receiveShadow
+                
             />
     );
 }

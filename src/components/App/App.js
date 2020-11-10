@@ -2,7 +2,8 @@ import React, { Suspense, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { Canvas } from 'react-three-fiber';
 import Box from '../Box/Box';
-import Controls from '../Controls/Controls';
+// import Controls from '../Controls/Controls';
+import Camera from '../Camera/Camera';
 import { Stars, Sky, PointerLockControls } from "@react-three/drei"
 import Plane from '../Plane/Plane';
 import Dinosaur from '../Dinosaur/Dinosaur';
@@ -33,6 +34,7 @@ const App = () => {
           gl.shadowMap.type = THREE.PCFSoftShadowMap
         }}
       >
+        <Camera fov={50} />
         {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
         {/* {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>} */}
         {/* <Controls /> */}
@@ -40,11 +42,11 @@ const App = () => {
         <PointerLockControls />
         <ambientLight intensity={night ? 0.05 : 0.5}/>
         <spotLight intensity={0.8} position= {[0, 15, 20]} penumbra={1} castShadow />
-        
+        {/* <hemisphereLight intensity={0.35} /> */}
         
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
-            <Dinosaur url="/assets/3D/scene.gltf" />
+            <Dinosaur />
           </Suspense>
           <Plane />
           <Player />       
