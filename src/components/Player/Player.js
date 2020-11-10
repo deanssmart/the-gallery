@@ -1,71 +1,63 @@
-import * as THREE from "three"
-import React, { useEffect, useRef, useState } from "react"
-import { useSphere } from "use-cannon"
-import { useThree, useFrame } from "react-three-fiber"
+import * as THREE from 'three';
+import React, { useEffect, useRef, useState } from 'react';
+import { useSphere } from 'use-cannon';
+import { useThree, useFrame } from 'react-three-fiber';
+import PointerLockControls from '../PointerLockControls/PointerLockControls'
+import usePlayerControls from '../usePlayerControls/usePlayerControls'
 
-const keys = { KeyW: "forward", KeyS: "backward", KeyA: "left", KeyD: "right", Space: "jump", ShiftLeft:"speed" }
-const moveFieldByKey = (key) => keys[key]
-const direction = new THREE.Vector3()
-const frontVector = new THREE.Vector3()
-const sideVector = new THREE.Vector3()
-
-const usePlayerControls = () => {
-  const [movement, setMovement] = useState({ forward: false, backward: false, left: false, right: false, jump: false, speed: 5 })
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-        switch(e.code) {
-            case "KeyW": //forward
-            case "KeyA": // left           
-            case "KeyS": // backwards           
-            case "KeyD": // right    
-            case "Space": // jump
-            setMovement((m) => ({ ...m, [moveFieldByKey(e.code)]: true }))
-                break;
-            case "ShiftLeft":
-            setMovement((m) => ({ ...m, [moveFieldByKey(e.code)]: 10 }))
-            break;
-            default: return;
-        }
-    }   
-    const handleKeyUp = (e) => {
-        switch(e.code) {
-            case "KeyW": //forward
-            case "KeyA": // left           
-            case "KeyS": // backwards           
-            case "KeyD": // right    
-            case "Space": // jump
-            setMovement((m) => ({ ...m, [moveFieldByKey(e.code)]: false }))
-                break;
-            case "ShiftLeft":
-            setMovement((m) => ({ ...m, [moveFieldByKey(e.code)]: 5 }))
-            break;
-            default: return;
-        }
-    }   
-    document.addEventListener("keydown", handleKeyDown)
-    document.addEventListener("keyup", handleKeyUp)
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown)
-      document.removeEventListener("keyup", handleKeyUp)
-    }
-  }, [])
-  return movement
-}
-
-export const Player = (props) => {
-  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 10, 30], ...props }))
-  const { forward, backward, left, right, jump, speed } = usePlayerControls()
+const Player = (props) => {
   const { camera } = useThree()
+  const { 
+    forward, 
+    backward, 
+    left, 
+    right, 
+    jump, 
+    speed 
+  } = usePlayerControls()
+  const [ref, api] = useSphere(() => ({ 
+    mass: 1, 
+    type: "Dynamic", 
+    position: [0, 10, 0], 
+    ...props 
+  }))
+
+  
+
   const velocity = useRef([0, 0, 0])
-  useEffect(() =>  api.velocity.subscribe((v) => (velocity.current = v)), [api.velocity])
+  useEffect(() =>  {
+    //update reference everytime velocity changes
+    api.velocity.subscribe(v => velocity.current = v)
+  }, [])
+  
   useFrame(() => {
+    //copy position of our physical sphere
     camera.position.copy(ref.current.position)
-    frontVector.set(0, 0, Number(backward) - Number(forward))
-    sideVector.set(Number(left) - Number(right), 0, 0)
+
+    const frontVector = new THREE.Vector3(0, 0, Number(backward) - Number(forward))
+    const sideVector = new THREE.Vector3(Number(left) - Number(right), 0, 0)
+
+    const direction = new THREE.Vector3()
+    //calculate direction aligned with the camera
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(speed).applyEuler(camera.rotation)
+    
+    //apply the velocity to our sphere
     api.velocity.set(direction.x, velocity.current[1], direction.z)
-    if (jump && Math.abs(velocity.current[1].toFixed(2)) < 100) api.velocity.set(velocity.current[0], 10, velocity.current[2])
+
+    //check if jumping and velocity in y compared to almost zero i.e we are standing or at the top of our jump 
+    if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.01) {
+      api.velocity.set(velocity.current[0], 10, velocity.current[2])
+    }
   })
-  return <mesh ref={ref} />
+
+
+  return (
+    <>
+    <PointerLockControls />
+    <mesh ref={ref}></mesh>
+    </>
+    )
+
 }
+
+export default Player

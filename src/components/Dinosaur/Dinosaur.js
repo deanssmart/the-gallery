@@ -21,7 +21,8 @@ const Dinosaur = (props) => {
             <mesh 
                 // ref={ref}
                 scale={[0.1, 0.1, 0.1]} 
-                geometry={model.geometry} 
+                geometry={model.geometry}
+                position={[0, 0, -20]} 
                 material={newMaterial}
                 castShadow 
                 receiveShadow
