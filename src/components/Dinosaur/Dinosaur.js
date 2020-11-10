@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useLoader } from 'react-three-fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useBox } from "use-cannon";
 import * as THREE from 'three';
 
 
 const Dinosaur = (props) => {
-    const [ref] = useBox(() => ({ mass: 1, type: "Dynamic", position: [0, 0, 0], ...props }))
+    // const [ref] = useBox(() => ({ mass: 1, type: "Dynamic", position: [0, 0, 0], ...props }))
     // console.log(useBox())
+    const group = useRef()
     const [model, setModel] = useState()
-    const texture =  new THREE.TextureLoader().load('/assets/3D/textures/trex_regular_baseColor.jpeg')
+    const texture = useLoader(THREE.TextureLoader, '/assets/3D/textures/trex_regular_baseColor.jpeg')
     texture.flipY=false;
     texture.wrapS = THREE.RepeatWrapping;
 
@@ -21,7 +23,7 @@ const Dinosaur = (props) => {
     return (
 
      model ? <primitive 
-                ref={ref}
+                // ref={ref}
                 object={model.scene} 
                 rotation={[-Math.PI / 2, 0, 0]}
                 scale={[0.1, 0.1, 0.1]}

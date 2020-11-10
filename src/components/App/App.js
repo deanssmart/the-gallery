@@ -26,10 +26,6 @@ const App = () => {
 
   return (
     <>
-      {/* <div className="overlay">
-        <div>← Click the dot to start</div>
-      </div>
-    <div className="dot" style={{ pointerEvents: ready ? "none" : "all" }} /> */}
       <Canvas 
         // camera={{ position: [0, 7, 5] }} 
         onCreated={({ gl }) => { 
@@ -40,6 +36,7 @@ const App = () => {
         {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
         {/* {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>} */}
         {/* <Controls /> */}
+        
         <PointerLockControls />
         <ambientLight intensity={night ? 0.05 : 0.5}/>
         <spotLight intensity={0.8} position= {[0, 15, 20]} penumbra={1} castShadow />

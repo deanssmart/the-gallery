@@ -20,13 +20,16 @@ canvas {
   justify-content: center;
 }
 
-.overlay > div {
+.instructions {
   position: relative;
-  margin-left: 250px;
-  background: black;
+  margin-left: 300px;
+  margin-top: 147px;
+  background: rgb(32, 32, 32);
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 25px;
+  text-align: right;
+  
 }
 
 
@@ -40,10 +43,6 @@ canvas {
   transform: translate3d(-50%, -50%, 0);
   cursor: pointer;
   border: 2px solid white;
-}
-
-.disabled {
-  cursor: not-allowed;
 }
 
 body {

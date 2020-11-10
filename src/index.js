@@ -36,7 +36,15 @@ function Overlay() {
     
       <App />
         <div className={ready ? "" : "overlay"}>
-          <div>← Click the dot to start</div>
+          <div className={"instructions"}>← Click the dot to center cursor
+          <br /><br />
+        Look: MOUSE<br/>  
+				Move: WASD<br/>
+				Jump: SPACE<br/>
+        Run: SHIFT<br/><br/>
+				
+        Night Mode: N<br/>
+          </div>
         </div>
       
       <div className="dot" 
