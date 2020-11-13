@@ -35,7 +35,7 @@ function Overlay() {
     <>
     
       <App />
-        <div className={ready ? "" : "overlay"}>
+        {/* <div className={ready ? "" : "overlay"}>
           <div className={"instructions"}>← Click the dot to center cursor
           <br /><br />
         Look: MOUSE<br/>  
@@ -46,7 +46,7 @@ function Overlay() {
         Flight Mode: F<br/>
         Night Mode: N<br/>
           </div>
-        </div>
+        </div> */}
       
       <div className="dot" 
       style={{ pointerEvents: ready ? "none" : "all" }} 

@@ -5,8 +5,10 @@ import Box from '../Box/Box';
 // import Controls from '../Controls/Controls';
 import Camera from '../Camera/Camera';
 import { Stars, Sky } from "@react-three/drei"
-import Plane from '../Plane/Plane';
+import Ground from '../Ground/Ground';
+import Room from '../Room/Room';
 import Dinosaur from '../Dinosaur/Dinosaur';
+import Portrait from '../Portrait/Portrait';
 import Player from '../Player/Player';
 import { Physics } from 'use-cannon';
 
@@ -40,15 +42,17 @@ const App = () => {
         {/* <Controls /> */}
         
         {/* <PointerLockControls /> */}
-        <ambientLight intensity={night ? 0.05 : 0.5}/>
+        <ambientLight intensity={night ? 0.05 : 0.3}/>
         <spotLight intensity={0.8} position= {[0, 15, 20]} penumbra={1} castShadow />
         {/* <hemisphereLight intensity={0.35} /> */}
         
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
             <Dinosaur />
+            <Portrait />
           </Suspense>
-          <Plane />
+          <Ground />
+          <Room />
           <Player />       
           <Box />
         </Physics>
@@ -59,4 +63,6 @@ const App = () => {
 }
 
 export default App;
+
+
 

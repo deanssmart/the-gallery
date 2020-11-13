@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePlane } from "use-cannon"
 
-const Plane = (props) => {
+const Ground = (props) => {
     const [ref] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], ...props }))
     return (
         <mesh ref={ref} receiveShadow>
@@ -11,4 +11,4 @@ const Plane = (props) => {
     );
 }
 
-export default Plane;
+export default Ground;

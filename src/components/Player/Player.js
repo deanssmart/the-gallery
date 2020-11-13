@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSphere } from 'use-cannon';
 import { useThree, useFrame } from 'react-three-fiber';
 import PointerLockControls from '../PointerLockControls/PointerLockControls'
@@ -19,17 +19,17 @@ const Player = (props) => {
   const [ref, api] = useSphere(() => ({ 
     mass: 1, 
     type: "Dynamic", 
-    position: [0, 10, 0], 
-    ...props 
+    position: [0, 10, 0],  
+    args: 3,
+     ...props 
   }))
 
-  
 
   const velocity = useRef([0, 0, 0])
   useEffect(() =>  {
     //update reference everytime velocity changes
     api.velocity.subscribe(v => velocity.current = v)
-  }, [])
+  }, [api.velocity])
   
   useFrame(() => {
     //copy position of our physical sphere

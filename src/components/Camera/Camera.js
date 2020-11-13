@@ -7,7 +7,7 @@ const Camera = (props) => {
     
     useEffect(() => {
         setDefaultCamera(ref.current)
-    }, [])
+    }, [setDefaultCamera])
 
     return (
         <perspectiveCamera ref={ref} {...props} />
