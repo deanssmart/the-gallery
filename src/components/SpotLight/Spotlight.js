@@ -13,6 +13,8 @@ const Spotlight = () => {
                 castShadow
                 shadow-bias={0.001}
                 shadow-normalBias={0.03}
+                angle={Math.PI/4}
+                decay={2}
                 />
             <primitive object={light.target} position={[20, 6, 0]}  />
         </>

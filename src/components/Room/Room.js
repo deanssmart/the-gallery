@@ -24,7 +24,11 @@ const Room = (props) => {
             castShadow
         >
             <boxBufferGeometry attach="geometry" args={[1, 12, 10]} />
-            <meshPhysicalMaterial attach="material" transparent>
+            <meshPhysicalMaterial 
+                attach="material" 
+                clearcoat={1}
+                transparent
+            >
                 <primitive attach="map" object={wallTexture} />
                 {/* <primitive attach="normalMap" object={wallNormalMap} /> */}
                 {/* <primitive attach="displacementMap" object={wallDispMap} /> */}
