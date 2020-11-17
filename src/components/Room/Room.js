@@ -1,28 +1,34 @@
 import React, { useMemo } from 'react';
 import { useBox } from "use-cannon";
-import { useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
 
 const Room = (props) => {
-    let wall, wallTexture, wallNormalMap, wallBumpMap;
+    let wallTexture, wallNormalMap, wallDispMap, wallSpecMap;
     const [ref] = useBox(() => ({ 
         type: "static", 
         position: [20, 5, 0], 
         args:[1, 10, 40] 
     }));
 
-    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_COLOR.jpg"), []) 
- 
+    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_COLOR.jpg"), []);
 
+    wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_NRM.jpg"), []);
+
+    wallDispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_DISP.jpg"), []);
+
+ 
     return (
         <mesh
             ref={ref}
-            // material={wall}
             receiveShadow
-            castShadow>
+            castShadow
+        >
             <boxBufferGeometry attach="geometry" args={[1, 12, 10]} />
             <meshPhysicalMaterial attach="material" transparent>
                 <primitive attach="map" object={wallTexture} />
+                {/* <primitive attach="normalMap" object={wallNormalMap} /> */}
+                {/* <primitive attach="displacementMap" object={wallDispMap} /> */}
+
             </meshPhysicalMaterial>
         </mesh>
     );
