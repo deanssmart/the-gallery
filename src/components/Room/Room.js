@@ -1,12 +1,29 @@
-import React from 'react';
-import { useBox } from "use-cannon"
+import React, { useMemo } from 'react';
+import { useBox } from "use-cannon";
+import { useLoader } from 'react-three-fiber';
+import * as THREE from 'three';
 
 const Room = (props) => {
-    const [ref] = useBox(() => ({ type: "static", position: [20, 5, 0], args:[1, 10, 40] }))
+    let wall, wallTexture, wallNormalMap, wallBumpMap;
+    const [ref] = useBox(() => ({ 
+        type: "static", 
+        position: [20, 5, 0], 
+        args:[1, 10, 40] 
+    }));
+
+    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_COLOR.jpg"), []) 
+ 
+
     return (
-        <mesh ref={ref} receiveShadow castShadow>
-            <boxBufferGeometry attach="geometry" args={[1, 10, 40]} />
-            <meshPhysicalMaterial attach="material" color="gray" />
+        <mesh
+            ref={ref}
+            // material={wall}
+            receiveShadow
+            castShadow>
+            <boxBufferGeometry attach="geometry" args={[1, 12, 10]} />
+            <meshPhysicalMaterial attach="material" transparent>
+                <primitive attach="map" object={wallTexture} />
+            </meshPhysicalMaterial>
         </mesh>
     );
 }

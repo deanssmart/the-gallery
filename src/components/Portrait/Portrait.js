@@ -28,7 +28,8 @@ const Portrait = (props) => {
         shininess: 700
      });
 
-    return (     
+    return (  
+   
             <mesh 
                 // ref={ref}
                 scale={[2, 2, 2]} 
@@ -37,29 +38,11 @@ const Portrait = (props) => {
                 rotation={[0, -Math.PI / 1, 0]}
                 material={newMaterial}
                 castShadow
-                receiveShadow
-                
-            />
+                receiveShadow                
+            />            
+
+
     );
 }
 
 export default Portrait;
-
-
-// const { nodes } = useLoader(GLTFLoader, "/assets/3D/Portrait/scene.gltf")
-// const model = nodes.defaultMaterial
-// const texture = useLoader(THREE.TextureLoader, '/assets/3D/Portrait/textures/initialShadingGroup_baseColor.jpeg')
-// texture.flipY=false;
-// texture.wrapS = THREE.RepeatWrapping;
-// const shine = useLoader(THREE.TextureLoader, '/assets/3D/Portrait/textures/initialShadingGroup_metallicRoughness.png')
-// shine.flipY=false;
-// shine.wrapS = THREE.RepeatWrapping;
-// const norm = useLoader(THREE.TextureLoader, '/assets/3D/Portrait/textures/initialShadingGroup_normal.png')
-// norm.flipY=false;
-// norm.wrapS = THREE.RepeatWrapping;
-
-// const newMaterial = new THREE.MeshPhongMaterial({ 
-//     map: texture,
-//     specularMap: shine,
-//     normalMap: norm,
-//  });
