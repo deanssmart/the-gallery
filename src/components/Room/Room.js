@@ -10,9 +10,9 @@ const Room = (props) => {
         args:[1, 12, 12] 
     }));
 
-    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/AlaskaMarble/MARBLE.jpg"), []);
+    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
 
-    // wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_NRM.jpg"), []);
+    wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
 
     // wallDispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_DISP.jpg"), []);
 
@@ -30,7 +30,7 @@ const Room = (props) => {
                 transparent
             >
                 <primitive attach="map" object={wallTexture} />
-                {/* <primitive attach="normalMap" object={wallNormalMap} /> */}
+                <primitive attach="normalMap" object={wallNormalMap} />
                 {/* <primitive attach="displacementMap" object={wallDispMap} /> */}
 
             </meshPhysicalMaterial>

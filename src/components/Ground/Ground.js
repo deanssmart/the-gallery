@@ -6,7 +6,7 @@ import { Reflector } from '@react-three/drei';
 const Ground = (props) => {
     let alphaMap, diffuseMap, dispMap, normalMap, specMap;
 
-    const size = 4;
+    const size = 4.6;
 
     const [groundRef] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], ...props }))
     const [mirrorRef] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], position: [0,-0.2,0], ...props }))
@@ -16,7 +16,7 @@ const Ground = (props) => {
     alphaMap.wrapT = THREE.MirroredRepeatWrapping;
     alphaMap.repeat.set(size, size);
 
-    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse3.jpg"), []);
+    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse2.jpg"), []);
     diffuseMap.wrapS = THREE.MirroredRepeatWrapping;
     diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
     diffuseMap.repeat.set(size, size);

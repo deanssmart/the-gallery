@@ -18,7 +18,7 @@ const Spotlight = () => {
                 decay={2}
                 />
             <primitive object={light.target} position={[21, 5, 0]}  />
-            <primitive object={new THREE.SpotLightHelper(light)} />
+            {/* <primitive object={new THREE.SpotLightHelper(light)} /> */}
         </>
     )
 }

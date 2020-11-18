@@ -48,19 +48,11 @@ const App = () => {
           position= {[0, 15, 20]} 
           penumbra={1.2} 
           castShadow
-          // shadow-bias={-0.00001}
-          // shadow-normalBias={-0.1}
+          shadow-bias={-0.00001}
+          shadow-normalBias={0.1}
           decay={2}
 
         />
-        {/* <spotLight 
-          intensity={0.8} 
-          position= {[18, 8, 0]} 
-          penumbra={0} 
-          castShadow 
-          // ref-current-lookAt={[18, 0, 0]}
-          lookAt={[18, 0, 0]}
-      /> */}
         {/* <hemisphereLight intensity={0.35} /> */}
           {/* <CeilingLight /> */}
         <SpotLight />        
