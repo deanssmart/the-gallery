@@ -42,20 +42,17 @@ const App = () => {
         {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
         {/* {night ? <fog attach="fog" args={["black", 1, 70]}/> : <fog attach="fog" args={["white", 1, 70]}/>} */}
         
-        <ambientLight intensity={night ? 0.05 : 0.3}/>
-        {/* <spotLight 
-          intensity={0.8} 
+        <ambientLight intensity={night ? 0.15 : 0.3}/>
+        <spotLight 
+          intensity={0.3} 
           position= {[0, 15, 20]} 
           penumbra={1.2} 
           castShadow
-          shadow-bias={0.0001}
-          shadow-normalBias={0.1}
+          // shadow-bias={-0.00001}
+          // shadow-normalBias={-0.1}
           decay={2}
-          shadow-mapSize-width={window.innerWidth}
-          shadow-mapSize-height={window.innerHeight}
 
-          shadow-mapSize-width={1024 * 4} 
-        /> */}
+        />
         {/* <spotLight 
           intensity={0.8} 
           position= {[18, 8, 0]} 

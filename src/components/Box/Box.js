@@ -8,7 +8,7 @@ const Box = (props) => {
     const [active, setActive] = useState(false)
     const springProps = useSpring({
         scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-        color: hovered ? "blue" : "gray",
+        color: hovered ? "red" : "blue",
         position: active ? [0, 100, 0] : [0, 0.5, 0]
      })
 

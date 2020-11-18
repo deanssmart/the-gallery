@@ -9,11 +9,11 @@ const Spotlight = () => {
             <primitive 
                 object={light}
                 position={[16, 11.5, 0]}
-                intensity={0.8} 
+                intensity={0.5} 
                 penumbra={0.9}
                 castShadow
                 shadow-bias={0.001}
-                shadow-normalBias={0.01}
+                shadow-normalBias={0.03}
                 angle={Math.PI/5.5}
                 decay={2}
                 />
