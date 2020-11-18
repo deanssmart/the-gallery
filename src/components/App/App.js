@@ -32,20 +32,16 @@ const App = () => {
   return (
     <>
       <Canvas 
-// shadowMap gl={{ alpha: false }}
         onCreated={({ gl }) => { 
-          // gl.toneMapping = THREE.CineonToneMapping;
           gl.shadowMap.enabled = true
           gl.shadowMap.type = THREE.PCFSoftShadowMap
-          // gl.shadowMapSize = (512, 512)
         }}
       >
 
         <Camera fov={60} />
         {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
-        {/* {night ? <fog attach="fog" args={["black", 2, 15]}/> : <fog attach="fog" args={["white", 10, 15]}/>} */}
+        {/* {night ? <fog attach="fog" args={["black", 1, 70]}/> : <fog attach="fog" args={["white", 1, 70]}/>} */}
         
-        {/* <PointerLockControls /> */}
         <ambientLight intensity={night ? 0.05 : 0.3}/>
         {/* <spotLight 
           intensity={0.8} 
@@ -70,8 +66,7 @@ const App = () => {
       /> */}
         {/* <hemisphereLight intensity={0.35} /> */}
           {/* <CeilingLight /> */}
-
-        <SpotLight />
+        <SpotLight />        
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
             <Dinosaur />

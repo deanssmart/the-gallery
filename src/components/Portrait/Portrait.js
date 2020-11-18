@@ -23,9 +23,9 @@ const Portrait = (props) => {
     return (  
    
             <mesh 
-                scale={[2, 2, 2]} 
+                scale={[3, 3, 3]} 
                 geometry={portrait.geometry}
-                position={[19.4, 5, 0]}
+                position={[19.4, 5.5, 0]}
                 rotation={[0, -Math.PI / 1, 0]}
                 castShadow
                 receiveShadow

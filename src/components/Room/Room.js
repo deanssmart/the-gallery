@@ -7,14 +7,14 @@ const Room = (props) => {
     const [ref] = useBox(() => ({ 
         type: "static", 
         position: [20, 5, 0], 
-        args:[1, 10, 40] 
+        args:[1, 12, 12] 
     }));
 
-    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_COLOR.jpg"), []);
+    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/AlaskaMarble/MARBLE.jpg"), []);
 
-    wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_NRM.jpg"), []);
+    // wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_NRM.jpg"), []);
 
-    wallDispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_DISP.jpg"), []);
+    // wallDispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_DISP.jpg"), []);
 
  
     return (
@@ -23,7 +23,7 @@ const Room = (props) => {
             receiveShadow
             castShadow
         >
-            <boxBufferGeometry attach="geometry" args={[1, 12, 10]} />
+            <boxBufferGeometry attach="geometry" args={[1, 12, 12]} />
             <meshPhysicalMaterial 
                 attach="material" 
                 clearcoat={1}
