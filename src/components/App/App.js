@@ -10,6 +10,7 @@ import Dinosaur from '../Dinosaur/Dinosaur';
 import Portrait from '../Portrait/Portrait';
 import SpotLight from '../SpotLight/Spotlight'
 import CeilingLight from '../CeilingLight/CeilingLight';
+import Bench from '../Bench/Bench';
 import Player from '../Player/Player';
 import { Physics } from 'use-cannon';
 
@@ -38,7 +39,7 @@ const App = () => {
         }}
       >
 
-        <Camera fov={60} />
+        <Camera fov={50} />
         {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
         {/* {night ? <fog attach="fog" args={["black", 1, 70]}/> : <fog attach="fog" args={["white", 1, 70]}/>} */}
         
@@ -55,12 +56,14 @@ const App = () => {
         />
         {/* <hemisphereLight intensity={0.35} /> */}
           {/* <CeilingLight /> */}
+        <Bench />
         <SpotLight />        
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
-            <Dinosaur />
+            {/* <Dinosaur /> */}
             <Portrait />
-            <Room />                       
+            <Room position={[20, 5, 0]} size={[1, 12, 12]} />
+            <Room position={[-20, 5, 0]} size={[1, 12, 12]} />                        
           </Suspense>
           
           <Ground />

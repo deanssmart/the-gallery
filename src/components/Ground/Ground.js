@@ -4,12 +4,17 @@ import * as THREE from 'three';
 import { Reflector } from '@react-three/drei';
 
 const Ground = (props) => {
-    let alphaMap, diffuseMap, dispMap, normalMap, specMap;
-
+    let alphaMap, diffuseMap, normalMap;
     const size = 4.6;
 
-    const [groundRef] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], ...props }))
-    const [mirrorRef] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], position: [0,-0.2,0], ...props }))
+    const [groundRef] = usePlane(() => ({ 
+        rotation: [-Math.PI / 2, 0, 0], ...props
+    }));
+    const [mirrorRef] = usePlane(() => ({ 
+        rotation: [-Math.PI / 2, 0, 0], 
+        position: [0,-0.2,0], 
+        ...props 
+    }));
 
     alphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-ao.jpg"), []);
     alphaMap.wrapS = THREE.MirroredRepeatWrapping;
@@ -21,38 +26,27 @@ const Ground = (props) => {
     diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
     diffuseMap.repeat.set(size, size);
 
-    dispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-displacement.jpg"), []);
-    dispMap.wrapS = THREE.MirroredRepeatWrapping;
-    dispMap.wrapT = THREE.MirroredRepeatWrapping;
-    dispMap.repeat.set(size, size);
+    // dispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-displacement.jpg"), []);
+    // dispMap.wrapS = THREE.MirroredRepeatWrapping;
+    // dispMap.wrapT = THREE.MirroredRepeatWrapping;
+    // dispMap.repeat.set(size, size);
 
     normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-normal.jpg"), []);
     normalMap.wrapS = THREE.MirroredRepeatWrapping;
     normalMap.wrapT = THREE.MirroredRepeatWrapping;
     normalMap.repeat.set(size, size);
 
-    specMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-specular.jpg"), []);
-    specMap.wrapS = THREE.MirroredRepeatWrapping;
-    specMap.wrapT = THREE.MirroredRepeatWrapping;
-    specMap.repeat.set(size, size);
-
-    // groundGeometry = useMemo(() => new THREE.PlaneBufferGeometry( 100, 100 ));
-    // groundMirror = useMemo(() => new Reflector( groundGeometry, {
-    //     clipBias: 0.003,
-    //     textureWidth: window.innerWidth * window.devicePixelRatio,
-    //     textureHeight: window.innerHeight * window.devicePixelRatio,
-    //     color: 0x889999
-    // }))
-
-
-
+    // specMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-specular.jpg"), []);
+    // specMap.wrapS = THREE.MirroredRepeatWrapping;
+    // specMap.wrapT = THREE.MirroredRepeatWrapping;
+    // specMap.repeat.set(size, size);
 
     return (
         <>
         <mesh ref={mirrorRef} position={[0, 1, 0]}>
-        <Reflector>
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
-        </Reflector>
+            <Reflector>
+                <planeBufferGeometry attach="geometry" args={[100, 100]} />
+            </Reflector>
         </mesh>
 
         <mesh ref={groundRef} receiveShadow>
@@ -63,7 +57,6 @@ const Ground = (props) => {
                 reflectivity={0}
                 clearcoat={1}
                 transparent
-                flatShading
             >
                 <primitive attach="alphaMap" object={alphaMap} />
                 <primitive attach="map" object={diffuseMap} />

@@ -2,55 +2,46 @@ import React, { useMemo } from 'react';
 import { useBox } from "use-cannon";
 import * as THREE from 'three';
 
-const Room = (props) => {
-    let wallTexture, wallNormalMap, wallDispMap, wallSpecMap;
+const Room = ({ position, size }) => {
+    let alphaMap, diffuseMap, normalMap;
+
     const [ref] = useBox(() => ({ 
-        type: "static", 
-        position: [20, 5, 0], 
-        args:[1, 12, 12] 
+        type: "static",         
+        args: size,
+        position  
     }));
 
-    wallTexture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
+    alphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-ao.jpg"), []);
 
-    wallNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
+    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
 
-    // wallDispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/WhiteMarble/WhiteMarble_DISP.jpg"), []);
+    // dispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-displacement.jpg"), []);
+
+    normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
+
+    // specMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-specular.jpg"), []);
 
  
     return (
+        <>
         <mesh
             ref={ref}
             receiveShadow
             castShadow
         >
-            <boxBufferGeometry attach="geometry" args={[1, 12, 12]} />
+            <boxBufferGeometry attach="geometry" args={size} />
             <meshPhysicalMaterial 
                 attach="material" 
                 clearcoat={1}
-                transparent
             >
-                <primitive attach="map" object={wallTexture} />
-                <primitive attach="normalMap" object={wallNormalMap} />
-                {/* <primitive attach="displacementMap" object={wallDispMap} /> */}
-
+                <primitive attach="alphaMap" object={alphaMap} />
+                <primitive attach="map" object={diffuseMap} />
+                <primitive attach="normalMap" object={normalMap} />
             </meshPhysicalMaterial>
         </mesh>
+        </>
     );
 }
 
 export default Room;
 
-// import React from 'react';
-// import { usePlane } from "use-cannon"
-
-// const Room = (props) => {
-//     const [ref] = usePlane(() => ({ rotation: [0, -Math.PI / 2, 0], ...props }))
-//     return (
-//         <mesh ref={ref} receiveShadow>
-//             <planeBufferGeometry attach="geometry" args={[10, 10, 10]} />
-//             <meshPhysicalMaterial attach="material" color="white" />
-//         </mesh>
-//     );
-// }
-
-// export default Room;
