@@ -8,7 +8,7 @@ const CeilingLight = () => {
 
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/Ceiling-Light/scene.gltf", setModel)
-    })
+    }, []);
   
     return model ? <primitive 
                         object={model.scene}

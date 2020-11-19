@@ -55,12 +55,14 @@ const App = () => {
 
         />
         {/* <hemisphereLight intensity={0.35} /> */}
-          {/* <CeilingLight /> */}
-        <Bench />
+          
+        
         <SpotLight />        
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
             {/* <Dinosaur /> */}
+            {/* <CeilingLight /> */}
+            {/* <Bench /> */}
             <Portrait />
             <Room position={[20, 5, 0]} size={[1, 12, 12]} />
             <Room position={[-20, 5, 0]} size={[1, 12, 12]} />                        
