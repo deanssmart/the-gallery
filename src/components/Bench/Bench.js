@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { useBox } from "use-cannon";
 import { draco } from 'drei';
 
-const Portrait = (props) => {
+const Bench = (props) => {
     let bench, texture;
     const position = [0, 0, 0]
 
@@ -19,7 +19,7 @@ const Portrait = (props) => {
     const { nodes } = useLoader(GLTFLoader, "/assets/3D/Bench/scene.gltf", draco())
     bench = nodes.Mesh_0
 
-    texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Bench2/textures/Scene_-_Root_baseColor2.jpg"), []);
+    texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Bench/textures/Scene_-_Root_baseColor2.jpg"), []);
     texture.flipY=false;
     
     return (  
@@ -45,4 +45,4 @@ const Portrait = (props) => {
     );
 }
 
-export default Portrait;
+export default Bench;

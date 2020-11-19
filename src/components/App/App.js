@@ -62,7 +62,7 @@ const App = () => {
           <Suspense fallback={null}>
             {/* <Dinosaur /> */}
             {/* <CeilingLight /> */}
-            {/* <Bench /> */}
+            <Bench />
             <Portrait />
             <Room position={[20, 5, 0]} size={[1, 12, 12]} />
             <Room position={[-20, 5, 0]} size={[1, 12, 12]} />                        
