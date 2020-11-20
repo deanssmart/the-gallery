@@ -9,7 +9,7 @@ const Window = ({ position }) => {
     const [model, setModel] = useState();
 
     useEffect(() => {
-      new GLTFLoader().load("/assets/3D/Window/scene.gltf", setModel)
+      new GLTFLoader().load("/assets/3D/WindowNoGlass/scene.gltf", setModel)
     }, []);
   
     return (
@@ -25,7 +25,6 @@ const Window = ({ position }) => {
                             child.receiveShadow = true;
                             child.material.toneMapped = false;
                             child.material.transparent = false;
-                            console.log(child)
                             child.material.metalness = 0;
                         }
                     })} 

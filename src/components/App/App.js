@@ -8,7 +8,8 @@ import Ground from '../Ground/Ground';
 import Display from '../Display/Display';
 import Dinosaur from '../Dinosaur/Dinosaur';
 import Portrait from '../Portrait/Portrait';
-import SpotLight from '../SpotLight/Spotlight'
+import SpotLight from '../SpotLight/Spotlight';
+import SLight from '../SLight/SLight';
 import CeilingLight from '../CeilingLight/CeilingLight';
 import Bench from '../Bench/Bench';
 import Player from '../Player/Player';
@@ -42,22 +43,23 @@ const App = () => {
       >
 
         <Camera fov={50} />
-        {night ? <Stars /> : <Sky sunPosition={[100, 100, 100]} /> }
+        {night ? <Stars /> : <Sky sunPosition={[29, 50, -60]} /> }
         {/* {night ? <fog attach="fog" args={["black", 1, 70]}/> : <fog attach="fog" args={["white", 1, 70]}/>} */}
         
         <ambientLight intensity={night ? 0.15 : 0.3}/>
         <spotLight 
           intensity={0.3} 
-          position= {[0, 15, 20]} 
-          penumbra={1.2} 
-          castShadow
-          shadow-bias={-0.00001}
-          shadow-normalBias={0.1}
+          position= {[0, 15, 35]} 
+          penumbra={1} 
+          // angle={Math.PI/8}
+          // castShadow
+          // shadow-bias={-0.00001}
+          // shadow-normalBias={0.1}
           decay={2}
         />
         {/* <hemisphereLight intensity={0.35} /> */}
           
-       
+        <SLight />
         <SpotLight />        
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>

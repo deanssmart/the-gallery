@@ -24,7 +24,7 @@ const Bench = (props) => {
 
             <group ref={ref}>
               <group
-                scale={[0.07, 0.07, 0.07]} 
+                scale={[0.08, 0.08, 0.08]} 
                 rotation={[-Math.PI /2 , 0, -Math.PI /8]}
                 position={[-6, 0, 2]}
               >
