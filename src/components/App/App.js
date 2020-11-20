@@ -5,7 +5,7 @@ import Box from '../Box/Box';
 import Camera from '../Camera/Camera';
 import { Stars, Sky } from "@react-three/drei"
 import Ground from '../Ground/Ground';
-import Room from '../Room/Room';
+import Display from '../Display/Display';
 import Dinosaur from '../Dinosaur/Dinosaur';
 import Portrait from '../Portrait/Portrait';
 import SpotLight from '../SpotLight/Spotlight'
@@ -13,7 +13,8 @@ import CeilingLight from '../CeilingLight/CeilingLight';
 import Bench from '../Bench/Bench';
 import Player from '../Player/Player';
 import { Physics } from 'use-cannon';
-
+import Controls from '../Controls/Controls';
+import Roof from '../Roof/Roof';
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -52,20 +53,20 @@ const App = () => {
           shadow-bias={-0.00001}
           shadow-normalBias={0.1}
           decay={2}
-
         />
         {/* <hemisphereLight intensity={0.35} /> */}
           
-        
+       
         <SpotLight />        
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
             {/* <Dinosaur /> */}
             {/* <CeilingLight /> */}
+            <Roof />
             <Bench />
             <Portrait />
-            <Room position={[20, 5, 0]} size={[1, 12, 12]} />
-            <Room position={[-20, 5, 0]} size={[1, 12, 12]} />                        
+            <Display position={[20, 5, 0]} size={[1, 12, 9]} />
+            <Display position={[-20, 5, 0]} size={[1, 12, 12]} />                        
           </Suspense>
           
           <Ground />

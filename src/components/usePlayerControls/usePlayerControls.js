@@ -20,7 +20,7 @@ const usePlayerControls = () => {
         left: false,
         right: false,
         jump: false,
-        speed: 5,
+        speed: 10,
         fly: false,
     })
 
@@ -40,7 +40,7 @@ const usePlayerControls = () => {
                 case "ShiftLeft":
                     setMovement((m) => ({ 
                         ...m, 
-                        [moveFieldByKey(e.code)]: 10 
+                        [moveFieldByKey(e.code)]: 20 
                     }))
                     return;
                 case "KeyF":
@@ -68,7 +68,7 @@ const usePlayerControls = () => {
                 case "ShiftLeft":
                     setMovement((m) => ({ 
                         ...m, 
-                        [moveFieldByKey(e.code)]: 5 
+                        [moveFieldByKey(e.code)]: 10 
                     }))
                     return;
                 default: return;

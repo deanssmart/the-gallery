@@ -7,41 +7,117 @@ import { draco } from 'drei';
 
 const Bench = (props) => {
     let bench, texture;
-    const position = [0, 0, 0]
-
+    
     const [ref] = useBox(() => ({
         type: "static",
-        args: [4, 1, 2],
+        args: [5.5, 2.5, 0.01],
         position: [0, 0, 0],
-        rotation: [-Math.PI /2 , 0, 0]
+        // rotation: [-Math.PI /2 , 0, -Math.PI /8]
      }))
 
-    const { nodes } = useLoader(GLTFLoader, "/assets/3D/Bench/scene.gltf", draco())
-    bench = nodes.Mesh_0
+    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench2/scene.gltf", draco())
 
-    texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Bench/textures/Scene_-_Root_baseColor2.jpg"), []);
-    texture.flipY=false;
+    // texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/SpecialBench/textures/Scene_-_Root_baseColor2.jpg"), []);
+    // texture.flipY=false;
     
     return (  
-   
-            <mesh 
-                ref={ref}
-                scale={[0.03, 0.03, 0.03]} 
-                geometry={bench.geometry}
-                position={position}
-                rotation={[-Math.PI /2 , 0, 0]}
-                castShadow
-                receiveShadow
-            >
-                <meshPhysicalMaterial 
-                    attach="material"
-                    clearcoat={0.5}
-                    clearcoatRoughness={0.15}
-                >
-                    <primitive attach="map" object={texture} />
-                </meshPhysicalMaterial>
-            </mesh>             
 
+            <group ref={ref}>
+              <group
+                scale={[0.07, 0.07, 0.07]} 
+                rotation={[-Math.PI /2 , 0, -Math.PI /8]}
+                position={[-6, 0, 2]}
+              >
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_0.geometry}>
+                  <meshPhysicalMaterial 
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.15}
+                  >
+                  </meshPhysicalMaterial>
+                </mesh>
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_1.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_2.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_3.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_4.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_5.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_6.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_7.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_8.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_9.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>  
+                <mesh castShadow receiveShadow geometry={nodes.Mesh_10.geometry}>
+                  <meshPhysicalMaterial 
+                      attach="material" 
+                      clearcoat={0.9}
+                      clearcoatRoughness={0.15}
+                  >
+                </meshPhysicalMaterial>
+                </mesh>
+              </group>  
+            </group>  
     );
 }
 

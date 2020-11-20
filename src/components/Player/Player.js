@@ -20,7 +20,7 @@ const Player = (props) => {
     mass: 1, 
     type: "Dynamic", 
     position: [0, 10, 0],  
-    args: 3,
+    args: 5,
      ...props 
   }))
 
