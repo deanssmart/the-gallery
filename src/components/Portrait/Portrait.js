@@ -24,6 +24,7 @@ const Portrait = () => {
                             child.castShadow = true;
                             child.receiveShadow = true;
                             child.material.metalness = 0.4;
+                            child.material.toneMapped = false;
                         }
                     })} 
                 /> : null

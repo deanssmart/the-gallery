@@ -23,6 +23,9 @@ const Window = ({ position }) => {
                         if ( child.isMesh ) {                                     
                             child.castShadow = true;
                             child.receiveShadow = true;
+                            child.material.toneMapped = false;
+                            child.material.transparent = false;
+                            console.log(child)
                             child.material.metalness = 0;
                         }
                     })} 
