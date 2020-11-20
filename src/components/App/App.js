@@ -15,6 +15,7 @@ import Player from '../Player/Player';
 import { Physics } from 'use-cannon';
 import Controls from '../Controls/Controls';
 import Roof from '../Roof/Roof';
+import Window from '../Window/Window';
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -62,11 +63,13 @@ const App = () => {
           <Suspense fallback={null}>
             {/* <Dinosaur /> */}
             {/* <CeilingLight /> */}
-            <Roof />
+            {/* <Roof /> */}
+            <Window position={[6, 8.5, -15]}/>
+            <Window position={[-6, 8.5, -15]}/>
             <Bench />
             <Portrait />
             <Display position={[20, 5, 0]} size={[1, 12, 9]} />
-            <Display position={[-20, 5, 0]} size={[1, 12, 12]} />                        
+            <Display position={[-20, 5, 0]} size={[1, 12, 12]} />
           </Suspense>
           
           <Ground />

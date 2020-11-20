@@ -55,25 +55,36 @@
 
 import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useLoader } from 'react-three-fiber';
 // import { draco } from 'drei';
+import * as THREE from 'three';
+import { MeshPhongMaterial } from 'three';
 
 const Roof = () => {
-    const [model, setModel] = useState()
-  
+    const [model, setModel] = useState();
+
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/Roof/scene.gltf", setModel)
     }, []);
   
     return (
-        model ? <mesh castShadow receiveShadow geometry={model}>
-                 {/* <meshPhongMaterial attach="material" shininess={200}>
-                     <primitive attach="map" object={windowTexture} />
-                     <primitive attach="normalMap" object={portraitNormalMap} />
-                     <primitive attach="specularMap" object={portraitSpecularMap} /> 
-                 </meshPhongMaterial> */}
-                 </mesh> : null
-
-        // model ? <primitive object={model.scene} /> : null
+        
+        model ? <primitive 
+                    scale={[4, 4, 4]}
+                    position={[5, 15, 10]}
+                    rotation={[0 ,-Math.PI /2, 0]}
+                    object={model.scene}
+                    shadows={model.scene.traverse( function ( child ) {
+                        if ( child.isMesh ) {                                     
+                            child.castShadow = true;
+                            child.receiveShadow = true;
+                            console.log(child);
+                            child.material.metalness = 0;
+                        }
+                    })} 
+                >
+                    <meshPhongMaterial attach="material"></meshPhongMaterial>
+                    </primitive>  : null
     )
   }
 
