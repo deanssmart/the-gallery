@@ -70,6 +70,7 @@ const App = () => {
             <Window position={[6, 8.5, -15]}/>
             <Glass position={[6, 8.5, -15]}/>
             <Window position={[-6, 8.5, -15]}/>
+            <Glass position={[-6, 8.5, -15]}/>
             <Bench />
             <Portrait />
             <Display position={[20, 5, 0]} size={[1, 12, 9]} />

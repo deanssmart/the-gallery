@@ -53,12 +53,10 @@ import { draco } from 'drei';
 
 
 const Glass = ({ position }) => {
-    let glass
+    let glass, specular
 
     const { nodes } = useLoader(GLTFLoader, "/assets/3D/Glass/scene.gltf", draco())
     glass = nodes.glass.children[0]
-
-    console.log(glass)
 
     // texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Glass/textures/Material_47_baseColor2.png"), []);
     // texture.flipY=false;
@@ -66,7 +64,7 @@ const Glass = ({ position }) => {
     // portraitNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Portrait/textures/initialShadingGroup_normal.png"), []);
     // portraitNormalMap.flipY=false;
 
-    // portraitSpecularMap = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Portrait/textures/initialShadingGroup_metallicRoughness.png"), []);
+    // specular = useMemo(() => new THREE.TextureLoader().load("/assets/3D/Glass/textures/Material_47_metallicRoughness.png"), []);
     // portraitSpecularMap.flipY=false;
 
     
@@ -77,27 +75,26 @@ const Glass = ({ position }) => {
                 geometry={glass.geometry}
                 position={position}
                 rotation={[Math.PI, 0, 0]}
-                // castShadow
-                // receiveShadow
+                renderOrder={1}
+
             >
                 <meshPhysicalMaterial 
                     attach="material" 
                     transparent={true}
-                    depthWrite={false} 
+                    // depthWrite={false} 
                     // depthTest={true}
                     // alphaTest={0.2}
-                    opacity={0.2} 
+                    opacity={0.15} 
                     clearcoat={1} 
-                    reflectivity={0.1}
+                    reflectivity={0.9}
                     roughness={0}
                     color="skyblue"
-                    side={THREE.FrontSide}
-                    metalness={1.1}
+                    // side={THREE.FrontSide}
+                    metalness={1}
+                    refractionRatio={0.98}
                 >
-                    {/* <primitive attach="map" object={texture} transparent /> */}
-                    {/* <primitive attach="normalMap" object={portraitNormalMap} />
-                    <primitive attach="specularMap" object={portraitSpecularMap} /> */}
-                </meshPhysicalMaterial>
+                    {/* <primitive attach="bumpMap" object={specular} /> */}
+                 </meshPhysicalMaterial>
             </mesh>             
 
     );

@@ -5,7 +5,6 @@ const SLight = () => {
 
     const light = useMemo(() => new THREE.DirectionalLight(0xffffff), [])
 
-    console.log(light)
     return (
         <>
             <primitive 
