@@ -17,6 +17,7 @@ import { Physics } from 'use-cannon';
 import Controls from '../Controls/Controls';
 import Roof from '../Roof/Roof';
 import Window from '../Window/Window';
+import Glass from '../Glass/Glass';
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -67,6 +68,7 @@ const App = () => {
             {/* <CeilingLight /> */}
             {/* <Roof /> */}
             <Window position={[6, 8.5, -15]}/>
+            <Glass position={[6, 8.5, -15]}/>
             <Window position={[-6, 8.5, -15]}/>
             <Bench />
             <Portrait />
