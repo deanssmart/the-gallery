@@ -17,7 +17,7 @@ const Window = ({ position }) => {
         model ? <primitive 
                     scale={[0.008, 0.008, 0.008]}
                     position={position}
-                    rotation={[0 ,Math.PI, 0]}
+                    rotation={[0, Math.PI ,0]}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
                         if ( child.isMesh ) {                                     
@@ -25,7 +25,7 @@ const Window = ({ position }) => {
                             child.receiveShadow = true;
                             child.material.toneMapped = false;
                             child.material.transparent = false;
-                            child.material.metalness = 0;
+                            child.material.metalness = 0.3;
                         }
                     })} 
                 /> : null

@@ -15,15 +15,16 @@ const SLight = () => {
             //   penumbra={1.2} 
             //   angle={Math.PI/4}
               castShadow
-              shadow-camera-bottom={-15}
-              shadow-camera-left={24}
-              shadow-camera-right={0}
+              shadow-camera-bottom={-30}
+              shadow-camera-top={30}
+              shadow-camera-left={53}
+              shadow-camera-right={-53}
             //   shadow-camera-far={300}
-            //   shadow-bias={-0.00001}
-            //   shadow-normalBias={0.1}
+              shadow-bias={0.01}
+              shadow-normalBias={0.5}
               decay={2}
             />
-            <primitive object={light.target} position={[5, 0, 10]}  />
+            <primitive object={light.target} position={[-15, 0, 50]}  />
             {/* <primitive object={new THREE.DirectionalLightHelper(light)} /> */}
         </>
     )

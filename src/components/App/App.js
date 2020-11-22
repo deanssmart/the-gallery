@@ -18,6 +18,7 @@ import Controls from '../Controls/Controls';
 import Roof from '../Roof/Roof';
 import Window from '../Window/Window';
 import Glass from '../Glass/Glass';
+import Wall from '../Wall/Wall';
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -67,8 +68,9 @@ const App = () => {
             {/* <Dinosaur /> */}
             {/* <CeilingLight /> */}
             {/* <Roof /> */}
-            <Window position={[6, 8.5, -15]}/>
-            <Glass position={[6, 8.5, -15]}/>
+            <Wall position={[-6, 8.5, -13.5]}/>
+            <Window position={[7, 8.5, -15]}/>
+            <Glass position={[7, 8.5, -15]}/>
             <Window position={[-6, 8.5, -15]}/>
             <Glass position={[-6, 8.5, -15]}/>
             <Bench />

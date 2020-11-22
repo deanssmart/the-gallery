@@ -84,14 +84,14 @@ const Glass = ({ position }) => {
                     // depthWrite={false} 
                     // depthTest={true}
                     // alphaTest={0.2}
-                    opacity={0.15} 
+                    opacity={0.3} 
                     clearcoat={1} 
-                    reflectivity={0.9}
+                    // reflectivity={1}
                     roughness={0}
                     color="skyblue"
                     // side={THREE.FrontSide}
                     metalness={1}
-                    refractionRatio={0.98}
+                    // refractionRatio={0.98}
                 >
                     {/* <primitive attach="bumpMap" object={specular} /> */}
                  </meshPhysicalMaterial>
