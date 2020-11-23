@@ -3,7 +3,7 @@ import * as THREE from 'three';
 
 const SLight = () => {
 
-    const light = useMemo(() => new THREE.DirectionalLight(0xffffff), [])
+    const light = useMemo(() => new THREE.DirectionalLight("skyblue"), [])
 
     return (
         <>
@@ -24,7 +24,7 @@ const SLight = () => {
               shadow-normalBias={0.5}
               decay={2}
             />
-            <primitive object={light.target} position={[-15, 0, 50]}  />
+            <primitive object={light.target} position={[-11, 0, 50]}  />
             {/* <primitive object={new THREE.DirectionalLightHelper(light)} /> */}
         </>
     )

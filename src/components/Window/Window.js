@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 // import { draco } from 'drei';
@@ -6,7 +6,20 @@ import * as THREE from 'three';
 import { MeshPhongMaterial } from 'three';
 
 const Window = ({ position }) => {
+    let newMaterial, alphaMap, diffuseMap, map, normalMap;
     const [model, setModel] = useState();
+
+    newMaterial = new THREE.MeshPhysicalMaterial({
+      // color: "black",
+    });
+
+    map = useMemo(() => new THREE.TextureLoader().load("assets/3D/WindowNoGlass/Textures/Material_49_baseColor.png"), []);
+    map.flipY=false;
+    // map.wrapS = THREE.RepeatWrapping;
+
+    normalMap = useMemo(() => new THREE.TextureLoader().load("assets/3D/WindowNoGlass/Textures/Material_49_bump.png"), []);
+    map.flipY=false;
+
 
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/WindowNoGlass/scene.gltf", setModel)
@@ -20,12 +33,18 @@ const Window = ({ position }) => {
                     rotation={[0, Math.PI ,0]}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
-                        if ( child.isMesh ) {                                     
+                        if ( child.isMesh ) {                
+                            child.material = newMaterial;      
                             child.castShadow = true;
                             child.receiveShadow = true;
                             child.material.toneMapped = false;
                             child.material.transparent = false;
-                            child.material.metalness = 0.3;
+                            child.material.metalness = 1;
+                            child.material.clearcoat = 1;
+                            child.material.clearcoatRoughness = 0.55;
+                            child.material.map = map;
+  
+                            // console.log(child)
                         }
                     })} 
                 /> : null

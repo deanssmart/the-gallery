@@ -43,7 +43,7 @@
 
 // export default Wall;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 // import { draco } from 'drei';
@@ -51,14 +51,33 @@ import * as THREE from 'three';
 import { MeshPhongMaterial } from 'three';
 
 const Wall = ({ position }) => {
+    let alphaMap, diffuseMap, normalMap;
+    const size = 9.6;
+
     const [model, setModel] = useState();
 
     const newMaterial = new THREE.MeshPhysicalMaterial({
-        castShadow: true,
-        clearcoat: 1
+        // castShadow: true,
+        // receiveShadow: true,
+        // side: THREE.DoubleSide,
+        // alphaMap: alphaMap,
+        // map: diffuseMap,
+        // normalMap: normalMap
     });
+    
 
     // console.log(newMaterial)
+
+    alphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-ao.jpg"), []);
+
+    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
+    // diffuseMap.wrapS = THREE.MirroredRepeatWrapping;
+    // diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
+    diffuseMap.repeat.set(size, size);
+
+
+    normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
+
 
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/Wall/scene.gltf", setModel)
@@ -71,15 +90,20 @@ const Wall = ({ position }) => {
                     position={position}
                     rotation={[0, Math.PI ,0]}
                     object={model.scene}
+                    // color="white"
                     // material={newMaterial}
-                    shadows={model.scene.traverse( function ( child ) {
-                        if ( child.isMesh ) {                                     
+                    mesh={model.scene.traverse( function ( child ) {
+                        if ( child.isMesh ) {
+                            child.material = newMaterial;                       
                             child.castShadow = true;
                             child.receiveShadow = true;
-                            // child.material.toneMapped = false;
-                            // child.material.transparent = false;
-                            child.material.metalness = 1;
                             child.material.side = THREE.DoubleSide;
+                            // child.material.alphaMap = alphaMap;
+                            // child.material.map = diffuseMap;
+                            // child.material.normalMap = normalMap;
+                            // child.material.clearcoat = 1;
+                            console.log(child.material)
+                            // child.material.mesh = newMaterial;
                         }
                     })} 
                 /> : null
