@@ -51,8 +51,8 @@ import * as THREE from 'three';
 import { MeshPhongMaterial } from 'three';
 
 const Wall = ({ position }) => {
-    let alphaMap, diffuseMap, normalMap;
-    const size = 9.6;
+    let bumpMap, diffuseMap, normalMap;
+    const size = 114;
 
     const [model, setModel] = useState();
 
@@ -68,11 +68,14 @@ const Wall = ({ position }) => {
 
     // console.log(newMaterial)
 
-    alphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-ao.jpg"), []);
+    bumpMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Wall/15_bump.jpg"), []);
+    bumpMap.wrapS = THREE.MirroredRepeatWrapping;
+    bumpMap.wrapT = THREE.MirroredRepeatWrapping;
+    bumpMap.repeat.set(size, size);
 
-    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
-    // diffuseMap.wrapS = THREE.MirroredRepeatWrapping;
-    // diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
+    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Wall/15.jpg"), []);
+    diffuseMap.wrapS = THREE.MirroredRepeatWrapping;
+    diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
     diffuseMap.repeat.set(size, size);
 
 
@@ -90,7 +93,6 @@ const Wall = ({ position }) => {
                     position={position}
                     rotation={[0, Math.PI ,0]}
                     object={model.scene}
-                    // color="white"
                     // material={newMaterial}
                     mesh={model.scene.traverse( function ( child ) {
                         if ( child.isMesh ) {
@@ -99,8 +101,11 @@ const Wall = ({ position }) => {
                             child.receiveShadow = true;
                             child.material.side = THREE.DoubleSide;
                             // child.material.alphaMap = alphaMap;
-                            // child.material.map = diffuseMap;
-                            // child.material.normalMap = normalMap;
+                            // child.material.bumpMap = bumpMap;
+                            // child.material.bumpScale = 0.1;
+                            child.material.map = bumpMap;
+                            child.material.metalness = 0;
+                            child.material.roughness = 1;
                             // child.material.clearcoat = 1;
                             console.log(child.material)
                             // child.material.mesh = newMaterial;

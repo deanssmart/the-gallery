@@ -15,8 +15,8 @@ const Portrait = () => {
     return (
         
         model ? <primitive 
-                    scale={[3, 3, 3]} 
-                    position={[19.3, 5.5, 0]}
+                    scale={[4, 4, 4]} 
+                    position={[19.3, 6.5, 0]}
                     rotation={[0, -Math.PI / 1, 0]}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
@@ -25,6 +25,8 @@ const Portrait = () => {
                             child.receiveShadow = true;
                             child.material.metalness = 0.4;
                             child.material.toneMapped = false;
+                            child.material.metalness = 0.9;
+                            child.material.roughness = 0.8;
                         }
                     })} 
                 /> : null

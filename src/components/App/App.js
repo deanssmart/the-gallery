@@ -55,11 +55,11 @@ const App = () => {
         
         <ambientLight intensity={night ? 0.15 : 0.3}/>
         {/* <spotLight 
-          intensity={0.3} 
-          position= {[0, 15, 35]} 
-          penumbra={1} 
-          // angle={Math.PI/8}
-          // castShadow
+          intensity={1} 
+          position= {[0, 0, 20]} 
+          penumbra={0.8} 
+          angle={Math.PI/6}
+          castShadow
           // shadow-bias={-0.00001}
           // shadow-normalBias={0.1}
           decay={2}
@@ -87,8 +87,8 @@ const App = () => {
             <Glass position={[-6, 8.5, -15]}/>
             <Bench />
             <Portrait />
-            <Display position={[20, 5, 0]} size={[1, 12, 9]} />
-            <Display position={[-20, 5, 0]} size={[1, 12, 12]} />
+            <Display position={[20, 5, 0]} size={[1, 16.5, 11]} />
+            <Display position={[-20, 5, 0]} size={[1, 15, 11]} />
           </Suspense>
           
           <Ground />

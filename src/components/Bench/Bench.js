@@ -32,89 +32,111 @@ const Bench = (props) => {
                   <meshPhysicalMaterial 
                     attach="material" 
                     clearcoat={0.9}
-                    clearcoatRoughness={0.15}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
                   </meshPhysicalMaterial>
                 </mesh>
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_1.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_2.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_3.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_4.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_5.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_6.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_7.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_8.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_9.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>  
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_10.geometry}>
                   <meshPhysicalMaterial 
-                      attach="material" 
-                      clearcoat={0.9}
-                      clearcoatRoughness={0.15}
+                    attach="material" 
+                    clearcoat={0.9}
+                    clearcoatRoughness={0.1}
+                    roughness={1}
+                    metalness={0.1}
                   >
-                </meshPhysicalMaterial>
+                  </meshPhysicalMaterial>
                 </mesh>
               </group>  
             </group>  

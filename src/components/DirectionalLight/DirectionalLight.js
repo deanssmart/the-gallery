@@ -10,9 +10,9 @@ const DirectionalLight = () => {
         <>
             <primitive 
               object={light}
-              intensity={0.2} 
-              position={[0, 18, 10]} 
-              distance={100}
+              intensity={0.3} 
+              position={[0, 19, 20]} 
+            //   distance={100}
             
             //   penumbra={1.2} 
             //   angle={Math.PI/4}

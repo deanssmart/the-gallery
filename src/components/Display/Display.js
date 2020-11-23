@@ -7,7 +7,7 @@ const Display = ({ position, size }) => {
 
     const [ref] = useBox(() => ({ 
         type: "static",         
-        args: size,
+        args: [0.1, 16.5, 2],
         position  
     }));
 
@@ -33,6 +33,7 @@ const Display = ({ position, size }) => {
             <meshPhysicalMaterial 
                 attach="material" 
                 clearcoat={1}
+                roughness={0.5}
             >
                 <primitive attach="alphaMap" object={alphaMap} />
                 <primitive attach="map" object={diffuseMap} />

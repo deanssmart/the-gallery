@@ -58,6 +58,7 @@ const Ground = (props) => {
                 clearcoat={1}
                 transparent
                 roughness={0.5}
+                metalness={0.3}
             >
                 <primitive attach="alphaMap" object={alphaMap} />
                 <primitive attach="map" object={diffuseMap} />
