@@ -8,29 +8,59 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1,
+                2
             ]
         }
     ],
     "nodes" : [
         {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        },
+        {
             "mesh" : 0,
-            "name" : "Cube.001",
+            "name" : "Cube.002",
             "scale" : [
                 35,
                 12.5,
                 1
             ],
             "translation" : [
-                -6.4866461753845215,
-                4.094912052154541,
+                -0.0011992454528808594,
+                12.522466659545898,
                 0.9540312886238098
             ]
         }
     ],
     "meshes" : [
         {
-            "name" : "Cube.002",
+            "name" : "Cube.003",
             "primitives" : [
                 {
                     "attributes" : {
@@ -47,63 +77,63 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 146,
+            "count" : 108,
             "max" : [
                 1,
-                1,
-                1
+                1.792370080947876,
+                -1
             ],
             "min" : [
                 -1,
                 -1,
-                -41
+                -3
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 146,
+            "count" : 108,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 146,
+            "count" : 108,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 252,
+            "count" : 198,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1752,
+            "byteLength" : 1296,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1752,
-            "byteOffset" : 1752
+            "byteLength" : 1296,
+            "byteOffset" : 1296
         },
         {
             "buffer" : 0,
-            "byteLength" : 1168,
-            "byteOffset" : 3504
+            "byteLength" : 864,
+            "byteOffset" : 2592
         },
         {
             "buffer" : 0,
-            "byteLength" : 504,
-            "byteOffset" : 4672
+            "byteLength" : 396,
+            "byteOffset" : 3456
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 5176,
+            "byteLength" : 3852,
             "uri" : "scene.bin"
         }
     ]

@@ -21,6 +21,7 @@ import Glass from '../Glass/Glass';
 import Wall from '../Wall/Wall';
 import DirectionalLight from '../DirectionalLight/DirectionalLight';
 import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib';
+import RoofGlass from '../RoofGlass/RoofGlass';
 
 RectAreaLightUniformsLib.init()
 
@@ -68,9 +69,9 @@ const App = () => {
         <DirectionalLight />
         {/* <rectAreaLight
                 intensity={1}
-                position={[0, 25, 20]}
-                width={20}
-                height={20}
+                position={[0, 40, 20]}
+                width={50}
+                height={50}
                 rotation={[-Math.PI / 2, 0, 0]}
             /> */}
         <SLight />
@@ -79,12 +80,15 @@ const App = () => {
           <Suspense fallback={null}>
             {/* <Dinosaur /> */}
             {/* <CeilingLight /> */}
-            {/* <Roof /> */}
-            <Wall position={[-6, 8.5, -13.5]}/>
-            <Window position={[7, 8.5, -15]}/>
-            <Glass position={[7, 8.5, -15]}/>
-            <Window position={[-6, 8.5, -15]}/>
-            <Glass position={[-6, 8.5, -15]}/>
+            <Roof position={[21, 25, -13.5]}/>
+            <RoofGlass position={[21, 25, -13.5]}/>
+            <Roof position={[0, 25, -13.5]}/>
+            <RoofGlass position={[0, 25, -13.5]}/>
+            <Wall position={[0, 0, -13.5]}/>
+            <Window position={[6.5, 8.5, -15]}/>
+            <Glass position={[6.5, 8.5, -15]}/>
+            <Window position={[-6.5, 8.5, -15]}/>
+            <Glass position={[-6.5, 8.5, -15]}/>
             <Bench />
             <Portrait />
             <Display position={[20, 5, 0]} size={[1, 16.5, 11]} />

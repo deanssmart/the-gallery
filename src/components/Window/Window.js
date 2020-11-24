@@ -38,7 +38,7 @@ const Window = ({ position }) => {
                             child.castShadow = true;
                             child.receiveShadow = true;
                             // child.material.toneMapped = false;
-                            child.material.transparent = false;
+                            // child.material.transparent = false;
                             child.material.metalness = 1;
                             child.material.clearcoat = 1;
                             child.material.clearcoatRoughness = 0.6;

@@ -24,7 +24,7 @@ const SLight = () => {
               shadow-normalBias={0.5}
               decay={2}
             />
-            <primitive object={light.target} position={[-11, 0, 50]}  />
+            <primitive object={light.target} position={[-12.5, 0, 50]}  />
             {/* <primitive object={new THREE.DirectionalLightHelper(light)} /> */}
         </>
     )

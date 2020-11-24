@@ -58,33 +58,42 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 // import { draco } from 'drei';
 import * as THREE from 'three';
-import { MeshPhongMaterial } from 'three';
 
-const Roof = () => {
+
+const Roof = ({ position }) => {
+    let newMaterial;
     const [model, setModel] = useState();
 
+    newMaterial = new THREE.MeshPhysicalMaterial({
+        // color: "black",
+      });
+
     useEffect(() => {
-      new GLTFLoader().load("/assets/3D/Roof/scene.gltf", setModel)
+      new GLTFLoader().load("/assets/3D/RoofNoGlass/scene.gltf", setModel)
     }, []);
   
     return (
         
         model ? <primitive 
-                    scale={[4, 4, 4]}
-                    position={[5, 15, 10]}
-                    rotation={[0 ,-Math.PI /2, 0]}
+                    scale={[3.5, 3.5, 3.5]}
+                    position={position}
+                    rotation={[0 ,Math.PI /2, 0]}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
-                        if ( child.isMesh ) {                                     
+                        if ( child.isMesh ) {   
+                            child.material = newMaterial;
                             child.castShadow = true;
                             child.receiveShadow = true;
+                            
                             console.log(child);
-                            child.material.metalness = 0;
+                            child.material.metalness = 1;
+                            child.material.roughness = 0.4;
+                            child.material.clearcoat = 1;
+                            child.material.clearcoatRoughness = 0.6;
                         }
                     })} 
-                >
-                    <meshPhongMaterial attach="material"></meshPhongMaterial>
-                    </primitive>  : null
+                >                   
+                </primitive>  : null
     )
   }
 
