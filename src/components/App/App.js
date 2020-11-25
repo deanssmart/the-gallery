@@ -89,11 +89,11 @@ const App = () => {
             <WindowGlass position={[0, 0, 0]}/>
             <Walls position={[0, 0, 0]}/> */}
             <Roof 
-              position={[0, 25.4, 13]} 
+              position={[0, 27, 13.2]} 
               rotation={[0, 0, 0]}
             />
             <RoofGlass
-              position={[0, 25.4, 13]} 
+              position={[0, 27, 13.2]} 
               rotation={[0, 0, 0]}
             />
             
