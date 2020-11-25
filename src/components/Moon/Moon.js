@@ -1,0 +1,16 @@
+import React from 'react';
+
+const Moon = ({ position }) => {
+    return (
+        
+        <mesh position={position} >
+            <sphereBufferGeometry attach="geometry" args={[5, 22, 20]} />
+            <meshPhysicalMaterial 
+                attach="material" 
+                color="white"
+                metalness={2}
+            />
+        </mesh>
+    );
+}
+export default Moon;

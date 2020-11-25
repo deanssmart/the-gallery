@@ -4,7 +4,7 @@ import { useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
 
 
-const RoofGlass = ({ position }) => {
+const RoofGlass = ({ position, rotation }) => {
     let newMaterial;
     const [model, setModel] = useState();
 
@@ -20,9 +20,9 @@ const RoofGlass = ({ position }) => {
         
         model ? <primitive 
                     renderOrder={1}
-                    scale={[3.5, 3.5, 3.5]}
+                    scale={[2.7, 2.7, 2.7]}
                     position={position}
-                    rotation={[0 ,Math.PI /2, 0]}
+                    rotation={rotation}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
                         if ( child.isMesh ) {   

@@ -21,7 +21,7 @@ const Player = (props) => {
     type: "Dynamic", 
     position: [0, 10, 0],  
     args: 6,
-     ...props 
+     ...props
   }))
 
 

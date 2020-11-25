@@ -10,7 +10,8 @@
             "nodes" : [
                 0,
                 1,
-                2
+                2,
+                3
             ]
         }
     ],
@@ -56,6 +57,19 @@
                 12.522466659545898,
                 0.9540312886238098
             ]
+        },
+        {
+            "name" : "BezierCircle",
+            "scale" : [
+                14.991263389587402,
+                1,
+                14.991263389587402
+            ],
+            "translation" : [
+                0,
+                0,
+                27
+            ]
         }
     ],
     "meshes" : [
@@ -77,15 +91,15 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 108,
+            "count" : 166,
             "max" : [
                 1,
-                1.792370080947876,
-                -1
+                1,
+                49
             ],
             "min" : [
                 -1,
-                -1,
+                -1.002976417541504,
                 -3
             ],
             "type" : "VEC3"
@@ -93,47 +107,47 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 108,
+            "count" : 166,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 108,
+            "count" : 166,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 198,
+            "count" : 360,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1296,
+            "byteLength" : 1992,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1296,
-            "byteOffset" : 1296
+            "byteLength" : 1992,
+            "byteOffset" : 1992
         },
         {
             "buffer" : 0,
-            "byteLength" : 864,
-            "byteOffset" : 2592
+            "byteLength" : 1328,
+            "byteOffset" : 3984
         },
         {
             "buffer" : 0,
-            "byteLength" : 396,
-            "byteOffset" : 3456
+            "byteLength" : 720,
+            "byteOffset" : 5312
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 3852,
+            "byteLength" : 6032,
             "uri" : "scene.bin"
         }
     ]

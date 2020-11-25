@@ -11,7 +11,7 @@ const DirectionalLight = () => {
             <primitive 
               object={light}
               intensity={0.3} 
-              position={[0, 19, 20]} 
+              position={[0, 20, 13]} 
             //   distance={100}
             
             //   penumbra={1.2} 
@@ -27,7 +27,7 @@ const DirectionalLight = () => {
             //   decay={2}
             />
             {/* <primitive object={light.target} position={[40, 25, -15]}  /> */}
-            <primitive object={new THREE.PointLightHelper(light)} />
+            {/* <primitive object={new THREE.PointLightHelper(light)} /> */}
         </>
     )
 }

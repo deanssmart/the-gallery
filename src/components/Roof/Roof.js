@@ -53,20 +53,23 @@
 
 // export default Roof;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 // import { draco } from 'drei';
 import * as THREE from 'three';
 
 
-const Roof = ({ position }) => {
-    let newMaterial;
+const Roof = ({ position, rotation }) => {
+    let newMaterial, map;
     const [model, setModel] = useState();
 
     newMaterial = new THREE.MeshPhysicalMaterial({
         // color: "black",
       });
+
+    map = useMemo(() => new THREE.TextureLoader().load("assets/3D/WindowNoGlass/Textures/Material_49_baseColor.png"), []);
+    map.flipY=false;
 
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/RoofNoGlass/scene.gltf", setModel)
@@ -75,9 +78,9 @@ const Roof = ({ position }) => {
     return (
         
         model ? <primitive 
-                    scale={[3.5, 3.5, 3.5]}
+                    scale={[2.7, 2.7, 2.7]}
                     position={position}
-                    rotation={[0 ,Math.PI /2, 0]}
+                    rotation={rotation}
                     object={model.scene}
                     shadows={model.scene.traverse( function ( child ) {
                         if ( child.isMesh ) {   
@@ -87,9 +90,10 @@ const Roof = ({ position }) => {
                             
                             console.log(child);
                             child.material.metalness = 1;
-                            child.material.roughness = 0.4;
                             child.material.clearcoat = 1;
                             child.material.clearcoatRoughness = 0.6;
+                            child.material.roughness = 1;
+                            child.material.map = map;
                         }
                     })} 
                 >                   

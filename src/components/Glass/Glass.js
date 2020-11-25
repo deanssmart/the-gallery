@@ -84,7 +84,7 @@ const Glass = ({ position }) => {
                     // depthWrite={false} 
                     // depthTest={true}
                     // alphaTest={0.2}
-                    opacity={0.3} 
+                    opacity={0.2} 
                     clearcoat={1} 
                     // reflectivity={1}
                     roughness={0}
