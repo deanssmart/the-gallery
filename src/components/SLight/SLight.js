@@ -18,7 +18,7 @@ const SLight = () => {
               shadow-camera-right={-53}
               // shadow-camera-far={300}
               // shadow-bias={0.01}
-              // shadow-normalBias={0.5}
+              // shadow-normalBias={0.05}
               decay={2}
             />
             <primitive object={light.target} position={[-12.5, 0, 50]}  />

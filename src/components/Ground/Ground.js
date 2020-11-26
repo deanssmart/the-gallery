@@ -42,35 +42,34 @@ const Ground = (props) => {
 
     return (
         <>
-        <mesh ref={grassRef} >
+            <mesh ref={grassRef} >
                 <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
                 <meshLambertMaterial attach="material">
                     <primitive attach="map" object={grassMap} />
                 </meshLambertMaterial>
-        </mesh>
+            </mesh>
 
-        <mesh ref={mirrorRef} >
-            <Reflector>
+            <mesh ref={mirrorRef} >
+                <Reflector>
+                    <planeBufferGeometry attach="geometry" args={[70, 75]} />
+                </Reflector>
+            </mesh>
+
+            <mesh ref={marbleRef} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[70, 75]} />
-            </Reflector>
-        </mesh>
-
-        <mesh ref={marbleRef} receiveShadow>
-            <planeBufferGeometry attach="geometry" args={[70, 75]} />
-
-            <meshPhysicalMaterial 
-                attach="material"
-                reflectivity={0}
-                clearcoat={1}
-                transparent
-                roughness={0.5}
-                metalness={0.3}
-            >
-                <primitive attach="map" object={marbleMap} />
-                <primitive attach="alphaMap" object={marbleAlphaMap} />
-                <primitive attach="normalMap" object={marbleNormalMap} />
-            </meshPhysicalMaterial>
-        </mesh>
+                <meshPhysicalMaterial 
+                    attach="material"
+                    reflectivity={0}
+                    clearcoat={1}
+                    transparent
+                    roughness={0.5}
+                    metalness={0.3}
+                >
+                    <primitive attach="map" object={marbleMap} />
+                    <primitive attach="alphaMap" object={marbleAlphaMap} />
+                    <primitive attach="normalMap" object={marbleNormalMap} />
+                </meshPhysicalMaterial>
+            </mesh>
         </>
     );
 }
