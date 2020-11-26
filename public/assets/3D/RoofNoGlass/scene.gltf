@@ -327,9 +327,9 @@
             "name" : "RootNode (gltf orientation matrix).002",
             "rotation" : [
                 0,
-                -0.7071067690849304,
-                -0.7071067690849304,
-                8.940698137394065e-08
+                -0.7071068286895752,
+                -0.7071068286895752,
+                8.940699558479537e-08
             ],
             "scale" : [
                 2,
@@ -454,20 +454,7 @@
                 0
             ],
             "name" : "ind_steel_window_01_mt",
-            "normalTexture" : {
-                "index" : 0,
-                "texCoord" : 0
-            },
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 1,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 2,
-                    "texCoord" : 0
-                }
-            }
+            "pbrMetallicRoughness" : {}
         }
     ],
     "meshes" : [
@@ -538,34 +525,6 @@
                     "material" : 0
                 }
             ]
-        }
-    ],
-    "textures" : [
-        {
-            "source" : 0
-        },
-        {
-            "source" : 1
-        },
-        {
-            "source" : 2
-        }
-    ],
-    "images" : [
-        {
-            "mimeType" : "image/png",
-            "name" : "ind_steel_window_01_mt_normal",
-            "uri" : "Textures/ind_steel_window_01_mt_normal.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "ind_steel_window_01_mt_baseColor",
-            "uri" : "Textures/ind_steel_window_01_mt_baseColor.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "ind_glass_01_mt_metallicRoughness",
-            "uri" : "Textures/ind_glass_01_mt_metallicRoughness.png"
         }
     ],
     "accessors" : [

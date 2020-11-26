@@ -111,16 +111,7 @@
                 0
             ],
             "name" : "Material_47",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 1,
-                    "texCoord" : 0
-                }
-            }
+            "pbrMetallicRoughness" : {}
         }
     ],
     "meshes" : [
@@ -137,26 +128,6 @@
                     "material" : 0
                 }
             ]
-        }
-    ],
-    "textures" : [
-        {
-            "source" : 0
-        },
-        {
-            "source" : 1
-        }
-    ],
-    "images" : [
-        {
-            "mimeType" : "image/png",
-            "name" : "Material_47_baseColor",
-            "uri" : "Textures/Material_47_baseColor.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "Material_47_metallicRoughness",
-            "uri" : "Textures/Material_47_metallicRoughness.png"
         }
     ],
     "accessors" : [
