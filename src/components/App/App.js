@@ -26,6 +26,7 @@ import WindowFrames from '../WindowFrames/WindowFrames';
 import WindowGlass from '../WindowGlass/WindowGlass';
 import Walls from '../Walls/Walls';
 import Moon from '../Moon/Moon';
+import Hands from '../Hands/Hands';
 
 RectAreaLightUniformsLib.init()
 
@@ -79,7 +80,26 @@ const App = () => {
                 rotation={[-Math.PI / 2, 0, 0]}
             /> */}
         <SLight />
-        <SpotLight />   
+        <SpotLight
+          position={[12, 19.5, 0]}
+          target={[21, 4, 0]}
+          intensity={1.5} 
+          penumbra={0.5}
+          shadow-bias={0}
+          sNormalBias={0.05}
+          angle={Math.PI/10}
+          decay={2}          
+        /> 
+        <SpotLight 
+          position={[28, 18, 12]}
+          target={[34.5, 13, 12]}
+          intensity={1.5} 
+          penumbra={0.5}
+          sBias={-0.001}
+          // shadow-normalBias={0.05}
+          angle={Math.PI/4}
+          decay={2}
+        />   
              
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
@@ -96,52 +116,6 @@ const App = () => {
               position={[0, 27, 13.2]} 
               rotation={[0, 0, 0]}
             />
-            
-            {/* <Roof 
-              position={[-32, 25, -36]} 
-              rotation={[Math.PI /40 ,Math.PI /2, 0]}
-            />
-            <RoofGlass 
-              position={[-32, 25, -36]} 
-              rotation={[Math.PI /40 ,Math.PI /2, 0]}
-            /> */}
-            {/* <Roof 
-              position={[35, 25, 0]} 
-              rotation={[0, -Math.PI /2, 0]}
-            /> */}
-
-            {/* <Roof 
-              position={[35, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            />
-            <RoofGlass 
-              position={[35, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            />
-            <Roof 
-              position={[-14, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            />
-            <RoofGlass 
-              position={[-14, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            />
-            <Roof 
-              position={[13.8, 25, 53.5]} 
-              rotation={[0 ,-Math.PI /2, 0]}
-            />
-            <RoofGlass 
-              position={[13.8, 25, 53.5]} 
-              rotation={[0 ,-Math.PI /2, 0]}
-            />
-            <Roof 
-              position={[-14, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            />
-            <RoofGlass 
-              position={[-14, 25, -13.5]} 
-              rotation={[0 ,Math.PI /2, 0]}
-            /> */}
 
             <Wall position={[0, 0, -13.5]}/>
             <Window position={[6.5, 8.5, -15]}/>
@@ -150,9 +124,10 @@ const App = () => {
             <Glass position={[-6.5, 8.5, -15]}/>
             <Bench />
             <Portrait />
+            <Hands />
             
-            <Display position={[20, 5, 0]} size={[1, 16.5, 11]} />
-            <Display position={[-20, 5, 0]} size={[1, 15, 11]} />
+            <Display position={[20, 5, 0]} size={[1, 18, 11]} />
+            <Display position={[-20, 5, 0]} size={[1, 18, 11]} />
           </Suspense>
           
           <Ground />
