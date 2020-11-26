@@ -4,53 +4,59 @@ import * as THREE from 'three';
 import { Reflector } from '@react-three/drei';
 
 const Ground = (props) => {
-    let alphaMap, diffuseMap, normalMap;
+    let marbleAlphaMap, marbleMap, marbleNormalMap, grassMap;
     const size = 4.6;
 
-    const [groundRef] = usePlane(() => ({ 
-        rotation: [-Math.PI / 2, 0, 0], ...props
+    const [marbleRef] = usePlane(() => ({ 
+        rotation: [-Math.PI / 2, 0, 0],
+        position: [0, 0, 22],
     }));
     const [mirrorRef] = usePlane(() => ({ 
         rotation: [-Math.PI / 2, 0, 0], 
-        position: [0,-0.2,0], 
-        ...props 
+        position: [0, -0.1, 22], 
+    }));
+    const [grassRef] = usePlane(() => ({ 
+        rotation: [-Math.PI / 2, 0, 0], 
+        position: [0, -0.2, 22],  
     }));
 
-    alphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-ao.jpg"), []);
-    alphaMap.wrapS = THREE.MirroredRepeatWrapping;
-    alphaMap.wrapT = THREE.MirroredRepeatWrapping;
-    alphaMap.repeat.set(size, size);
+    marbleMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse2.jpg"), []);
+    marbleMap.wrapS = THREE.MirroredRepeatWrapping;
+    marbleMap.wrapT = THREE.MirroredRepeatWrapping;
+    marbleMap.repeat.set(size, size);
 
-    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse2.jpg"), []);
-    diffuseMap.wrapS = THREE.MirroredRepeatWrapping;
-    diffuseMap.wrapT = THREE.MirroredRepeatWrapping;
-    diffuseMap.repeat.set(size, size);
+    marbleAlphaMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-ao.jpg"), []);
+    marbleAlphaMap.wrapS = THREE.MirroredRepeatWrapping;
+    marbleAlphaMap.wrapT = THREE.MirroredRepeatWrapping;
+    marbleAlphaMap.repeat.set(size, size);
 
-    // dispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-displacement.jpg"), []);
-    // dispMap.wrapS = THREE.MirroredRepeatWrapping;
-    // dispMap.wrapT = THREE.MirroredRepeatWrapping;
-    // dispMap.repeat.set(size, size);
+    marbleNormalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-normal.jpg"), []);
+    marbleNormalMap.wrapS = THREE.MirroredRepeatWrapping;
+    marbleNormalMap.wrapT = THREE.MirroredRepeatWrapping;
+    marbleNormalMap.repeat.set(size, size);
 
-    normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-normal.jpg"), []);
-    normalMap.wrapS = THREE.MirroredRepeatWrapping;
-    normalMap.wrapT = THREE.MirroredRepeatWrapping;
-    normalMap.repeat.set(size, size);
-
-    // specMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-specular.jpg"), []);
-    // specMap.wrapS = THREE.MirroredRepeatWrapping;
-    // specMap.wrapT = THREE.MirroredRepeatWrapping;
-    // specMap.repeat.set(size, size);
+    grassMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Grass/GrassGreenTexture0002.jpg"), []);
+    grassMap.wrapS = THREE.RepeatWrapping;
+    grassMap.wrapT = THREE.RepeatWrapping;
+    grassMap.repeat.set(70, 70);
 
     return (
         <>
-        <mesh ref={mirrorRef} position={[0, 1, 0]}>
+        <mesh ref={grassRef} >
+                <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
+                <meshLambertMaterial attach="material">
+                    <primitive attach="map" object={grassMap} />
+                </meshLambertMaterial>
+        </mesh>
+
+        <mesh ref={mirrorRef} >
             <Reflector>
-                <planeBufferGeometry attach="geometry" args={[100, 100]} />
+                <planeBufferGeometry attach="geometry" args={[70, 75]} />
             </Reflector>
         </mesh>
 
-        <mesh ref={groundRef} receiveShadow>
-            <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <mesh ref={marbleRef} receiveShadow>
+            <planeBufferGeometry attach="geometry" args={[70, 75]} />
 
             <meshPhysicalMaterial 
                 attach="material"
@@ -60,11 +66,9 @@ const Ground = (props) => {
                 roughness={0.5}
                 metalness={0.3}
             >
-                <primitive attach="alphaMap" object={alphaMap} />
-                <primitive attach="map" object={diffuseMap} />
-                {/* <primitive attach="displacementMap" object={dispMap} /> */}
-                <primitive attach="normalMap" object={normalMap} />
-                {/* <primitive attach="specularMap" object={specMap} /> */}
+                <primitive attach="map" object={marbleMap} />
+                <primitive attach="alphaMap" object={marbleAlphaMap} />
+                <primitive attach="normalMap" object={marbleNormalMap} />
             </meshPhysicalMaterial>
         </mesh>
         </>

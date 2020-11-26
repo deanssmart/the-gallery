@@ -9,6 +9,7 @@ const Moon = ({ position }) => {
                 attach="material" 
                 color="white"
                 metalness={2}
+                fog={false}
             />
         </mesh>
     );

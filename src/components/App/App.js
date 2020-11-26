@@ -57,7 +57,7 @@ const App = () => {
 
         <Camera fov={60} />
         {night ?<> <Stars /> <Moon position={[110, 170, -250]} /></>: <Sky sunPosition={[110, 170, -250]} /> }
-        {/* {night ? <fog attach="fog" args={["black", 1, 70]}/> : <fog attach="fog" args={["white", 1, 70]}/>} */}
+        {night ? <fog attach="fog" args={["black", 2, 250]}/> : <fog attach="fog" args={["white", 2, 250]}/>}
         
         <ambientLight intensity={night ? 0.15 : 0.3}/>
         {/* <spotLight 

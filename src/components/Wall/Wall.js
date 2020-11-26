@@ -51,8 +51,8 @@ import * as THREE from 'three';
 import { useBox } from "use-cannon";
 
 const Wall = ({ position }) => {
-    let bumpMap, diffuseMap, normalMap;
-    const size = 4;
+    let texture;
+    const size = 7;
 
     const [model, setModel] = useState();
     const [ref] = useBox(() => ({ 
@@ -62,31 +62,15 @@ const Wall = ({ position }) => {
     }))
 
     const newMaterial = new THREE.MeshPhysicalMaterial({
-        // castShadow: true,
-        // receiveShadow: true,
-        // side: THREE.DoubleSide,
-        // alphaMap: alphaMap,
-        // map: diffuseMap,
-        // normalMap: normalMap
     });
     
 
-    // console.log(newMaterial)
+    texture = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Wall/15_bump.jpg"), []);
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(size, size);
 
-    bumpMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Wall/15_bump.jpg"), []);
-    bumpMap.wrapS = THREE.RepeatWrapping;
-    bumpMap.wrapT = THREE.RepeatWrapping;
-    bumpMap.repeat.set(size, size);
-
-    diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/Wall/15.jpg"), []);
-    diffuseMap.wrapS = THREE.RepeatWrapping;
-    diffuseMap.wrapT = THREE.RepeatWrapping;
-    diffuseMap.repeat.set(size, size);
-
-
-    normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
-
-
+  
     useEffect(() => {
       new GLTFLoader().load("/assets/3D/Wall/scene.gltf", setModel)
     }, []);
@@ -99,23 +83,17 @@ const Wall = ({ position }) => {
                     position={position}
                     rotation={[0, 0 ,0]}
                     object={model.scene}
-                    // material={newMaterial}
                     mesh={model.scene.traverse( function ( child ) {
                         if ( child.isMesh ) {
-                            child.material = newMaterial;                       
+                            child.material = newMaterial;
                             child.castShadow = true;
                             child.receiveShadow = true;
                             child.material.side = THREE.DoubleSide;
-                            // child.material.alphaMap = alphaMap;
-                            child.material.alphaMap = bumpMap;
-                            // child.material.bumpScale = 0.1;
-                            child.material.map = bumpMap;
+                            child.material.alphaMap = texture;
+                            child.material.map = texture;
                             child.material.metalness = 0;
-                            child.material.roughness = 0.8;
-                            // child.material.clearcoat = 1;
-                            child.material.flatShading = true;
-                            console.log(child.material)
-
+                            child.material.roughness = 1;
+                            console.log(child)
                         }
                     })} 
                 /> : null
