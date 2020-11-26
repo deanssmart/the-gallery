@@ -9,7 +9,7 @@ const Ground = (props) => {
 
     const [marbleRef] = usePlane(() => ({ 
         rotation: [-Math.PI / 2, 0, 0],
-        position: [0, 0, 22],
+        position: [0, 0.1, 22],
     }));
     const [mirrorRef] = usePlane(() => ({ 
         rotation: [-Math.PI / 2, 0, 0], 
@@ -17,7 +17,7 @@ const Ground = (props) => {
     }));
     const [grassRef] = usePlane(() => ({ 
         rotation: [-Math.PI / 2, 0, 0], 
-        position: [0, -0.2, 22],  
+        position: [0, -0.3, 22],  
     }));
 
     marbleMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse2.jpg"), []);

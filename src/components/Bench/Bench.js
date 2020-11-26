@@ -10,12 +10,12 @@ const Bench = (props) => {
     
     const [ref] = useBox(() => ({
         type: "static",
-        args: [5.5, 2.5, 0.01],
+        args: [10, 5, 0.01],
         position: [0, 0, 0],
         // rotation: [-Math.PI /2 , 0, -Math.PI /8]
      }))
 
-    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench2/scene.gltf", draco())
+    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench/scene.gltf", draco())
 
     // texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/SpecialBench/textures/Scene_-_Root_baseColor2.jpg"), []);
     // texture.flipY=false;
@@ -24,9 +24,9 @@ const Bench = (props) => {
 
             <group ref={ref}>
               <group
-                scale={[0.08, 0.08, 0.08]} 
-                rotation={[-Math.PI /2 , 0, -Math.PI /8]}
-                position={[-6, 0, 2]}
+                scale={[0.11, 0.11, 0.11]} 
+                rotation={[-Math.PI /2 , 0, -Math.PI /7]}
+                position={[-9, 0, 2]}
               >
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_0.geometry}>
                   <meshPhysicalMaterial 
