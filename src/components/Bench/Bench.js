@@ -1,25 +1,18 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useLoader } from 'react-three-fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import * as THREE from 'three';
 import { useBox } from "use-cannon";
 import { draco } from 'drei';
 
 const Bench = (props) => {
-    let bench, texture;
-    
     const [ref] = useBox(() => ({
         type: "static",
         args: [10, 5, 0.01],
         position: [0, 0, 0],
-        // rotation: [-Math.PI /2 , 0, -Math.PI /8]
      }))
 
-    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench/scene.gltf", draco())
-
-    // texture = useMemo(() => new THREE.TextureLoader().load("/assets/3D/SpecialBench/textures/Scene_-_Root_baseColor2.jpg"), []);
-    // texture.flipY=false;
-    
+    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench/scene.gltf", draco());
+   
     return (  
 
             <group ref={ref}>

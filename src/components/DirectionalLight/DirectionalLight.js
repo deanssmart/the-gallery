@@ -1,33 +1,36 @@
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
 
-const DirectionalLight = () => {
+const DirectionalLight = ({
+    position,
+    target,
+    intensity,
+    color,
+    shadowCamBot,
+    shadowCamTop,
+    shadowCamL,
+    shadowCamR,
+}) => {
 
-    const light = useMemo(() => new THREE.PointLight(0xffffff), [])
-
+    const light = useMemo(() => new THREE.DirectionalLight(), [])
     
     return (
         <>
             <primitive 
+              color={color}
               object={light}
-              intensity={0.3} 
-              position={[0, 20, 13]} 
-            //   distance={100}
-            
-            //   penumbra={1.2} 
-            //   angle={Math.PI/4}
- 
-            //   shadow-camera-bottom={-30}
-            //   shadow-camera-top={30}
-            //   shadow-camera-left={53}
-            //   shadow-camera-right={-53}
-            //   shadow-camera-far={300}
-            //   shadow-bias={0.01}
-            //   shadow-normalBias={0.5}
-            //   decay={2}
+              castShadow
+              position={position}
+              intensity={intensity}
+              shadow-camera-bottom={shadowCamBot}
+              shadow-camera-top={shadowCamTop}
+              shadow-camera-left={shadowCamL}
+              shadow-camera-right={shadowCamR}
+              decay={2}
             />
-            {/* <primitive object={light.target} position={[40, 25, -15]}  /> */}
-            {/* <primitive object={new THREE.PointLightHelper(light)} /> */}
+            <primitive object={light.target} position={target}  />
+            {/* <primitive object={new THREE.DirectionalLightHelper(light)} /> */}
+
         </>
     )
 }

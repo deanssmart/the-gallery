@@ -15,13 +15,8 @@ const Display = ({ position, size }) => {
 
     diffuseMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-diffuse.jpg"), []);
 
-    // dispMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-displacement.jpg"), []);
-
     normalMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-normal.jpg"), []);
 
-    // specMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BiancoMarble/BIANCO-specular.jpg"), []);
-
- 
     return (
         <>
         <mesh

@@ -20,7 +20,7 @@ const Ground = (props) => {
         position: [0, -0.3, 22],  
     }));
 
-    marbleMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse2.jpg"), []);
+    marbleMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse.jpg"), []);
     marbleMap.wrapS = THREE.MirroredRepeatWrapping;
     marbleMap.wrapT = THREE.MirroredRepeatWrapping;
     marbleMap.repeat.set(size, size);
