@@ -48,7 +48,7 @@ const App = () => {
           : 
           <>
             <Sky sunPosition={[110, 170, -250]} /> 
-            <fog attach="fog" args={["lightgoldenrodyellow", 30, 250]}/>
+            <fog attach="fog" args={["#f0f4f5", 30, 250]}/>
           </>
         }
 
