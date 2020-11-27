@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom';
-import './index.css';
+import './style/css/index.css';
+// import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+import Loading from './components/Loading/Loading';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//     <div className="dot"></div>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-
-function Overlay() {
+const Overlay = () => {
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
@@ -35,23 +28,25 @@ function Overlay() {
     <>
     
       <App />
-        {/* <div className={ready ? "" : "overlay"}>
+        <div className={ready ? "" : "overlay"}>
           <div className={"instructions"}>← Click the dot to center cursor
           <br /><br />
         Look: MOUSE<br/>  
 				Move: WASD<br/>
 				Jump: SPACE<br/>
         Run: SHIFT<br/><br/>
-				
-        Flight Mode: F<br/>
-        Night Mode: N<br/>
+
+        Toggle Night Mode: N<br/><br/>				
+        Toggle Flight Mode: F<br/>
+        (Hold space to fly)<br/>        
           </div>
-        </div> */}
+        </div>
       
       <div className="dot" 
       style={{ pointerEvents: ready ? "none" : "all" }} 
       // onClick={() => setReady(true)}
        />
+      <Loading />
       </>
   )
 }

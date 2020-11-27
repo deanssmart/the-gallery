@@ -83,6 +83,7 @@ const usePlayerControls = () => {
             document.removeEventListener("keyup", handleKeyUp)
         }
     }, [movement.fly])
+    
     return movement
 }
 

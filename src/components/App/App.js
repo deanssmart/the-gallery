@@ -12,8 +12,6 @@ import SmallBench from '../SmallBench/SmallBench';
 import Camera from '../Camera/Camera';
 import Player from '../Player/Player';
 import Lights from '../Lights/Lights';
-import Box from '../Box/Box';
-
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -64,7 +62,6 @@ const App = () => {
             <SmallBench />                 
           </Suspense>      
           <Player />       
-          <Box />
         </Physics>
 
       </Canvas>
