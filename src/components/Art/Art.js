@@ -53,7 +53,7 @@ const Art = () => {
         <Picture 
             url={"/assets/3D/OldMan/scene.gltf"}
             scale={[4, 4, 4]}
-            position={[-19.3, 7, 25]}            
+            position={[-19.4, 7, 25]}            
             rotation={[0, 0, 0]}
             metalness={0.9}
             roughness={0.9}
