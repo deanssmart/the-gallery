@@ -8,6 +8,7 @@ import Building from '../Building/Building';
 import Ground from '../Ground/Ground';
 import Art from '../Art/Art';
 import Bench from '../Bench/Bench';
+import SmallBench from '../SmallBench/SmallBench';
 import Camera from '../Camera/Camera';
 import Player from '../Player/Player';
 import Lights from '../Lights/Lights';
@@ -56,10 +57,11 @@ const App = () => {
              
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
-            <Building />
-            <Bench />
+            <Ground /> 
+            <Building />            
             <Art />   
-            <Ground />      
+            <Bench />
+            <SmallBench />                 
           </Suspense>      
           <Player />       
           <Box />

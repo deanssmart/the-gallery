@@ -13,7 +13,7 @@ const DirectionalLight = ({
 }) => {
 
     const light = useMemo(() => new THREE.DirectionalLight(), [])
-    
+
     return (
         <>
             <primitive 
@@ -27,6 +27,7 @@ const DirectionalLight = ({
               shadow-camera-left={shadowCamL}
               shadow-camera-right={shadowCamR}
               decay={2}
+              
             />
             <primitive object={light.target} position={target}  />
             {/* <primitive object={new THREE.DirectionalLightHelper(light)} /> */}

@@ -131,63 +131,63 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 1667,
+            "count" : 286,
             "max" : [
                 0.05819600075483322,
-                1,
-                0.8330109715461731
+                0.8253239989280701,
+                0.6405619978904724
             ],
             "min" : [
-                -0.05819600075483322,
-                -1,
-                -0.8330109715461731
+                -0.010945499874651432,
+                -0.8408669829368591,
+                -0.6473910212516785
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 1667,
+            "count" : 286,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 1667,
+            "count" : 286,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 3348,
+            "count" : 342,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 20004,
+            "byteLength" : 3432,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 20004,
-            "byteOffset" : 20004
+            "byteLength" : 3432,
+            "byteOffset" : 3432
         },
         {
             "buffer" : 0,
-            "byteLength" : 13336,
-            "byteOffset" : 40008
+            "byteLength" : 2288,
+            "byteOffset" : 6864
         },
         {
             "buffer" : 0,
-            "byteLength" : 6696,
-            "byteOffset" : 53344
+            "byteLength" : 684,
+            "byteOffset" : 9152
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 60040,
+            "byteLength" : 9836,
             "uri" : "scene.bin"
         }
     ]

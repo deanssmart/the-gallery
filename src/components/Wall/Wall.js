@@ -54,7 +54,6 @@ const Wall = ({
                             child.material.map = texture;
                             child.material.metalness = 0;
                             child.material.roughness = 1;
-                            console.log(child)
                         }
                     })} 
                 /> : null

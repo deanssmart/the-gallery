@@ -7,19 +7,19 @@ import { draco } from 'drei';
 const Bench = (props) => {
     const [ref] = useBox(() => ({
         type: "static",
-        args: [10, 5, 0.01],
-        position: [0, 0, 0],
+        args: [10, 3, 1],
+        position: [0, 0, 3],
      }))
 
-    const { nodes } = useLoader(GLTFLoader, "/assets/3D/SpecialBench/scene.gltf", draco());
+    const { nodes } = useLoader(GLTFLoader, "/assets/3D/Bench/scene.gltf", draco());
    
     return (  
-
-            <group ref={ref}>
+            <>
+            <mesh ref={ref}/>
               <group
                 scale={[0.11, 0.11, 0.11]} 
-                rotation={[-Math.PI /2 , 0, -Math.PI /7]}
-                position={[-9, 0, 2]}
+                rotation={[-Math.PI /2 , 0, -Math.PI /6.5]}
+                position={[-9, 0, 5]}
               >
                 <mesh castShadow receiveShadow geometry={nodes.Mesh_0.geometry}>
                   <meshPhysicalMaterial 
@@ -131,8 +131,8 @@ const Bench = (props) => {
                   >
                   </meshPhysicalMaterial>
                 </mesh>
-              </group>  
-            </group>  
+              </group>
+            </> 
     );
 }
 
