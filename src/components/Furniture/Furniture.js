@@ -7,7 +7,7 @@ const Furniture = () => {
         <>
             <Bench 
               url={"/assets/3D/Bench/scene.gltf"}
-              scale={[0.12, 0.12, 0.12]}
+              scale={[0.11, 0.11, 0.11]}
               position={[0, 0, 3]}
               rotation={[0, 0, 0]}
               physicsSize={[10, 3, 1]}
@@ -15,10 +15,10 @@ const Furniture = () => {
             />
             <Bench
               url={"/assets/3D/smallBench/scene.gltf"}
-              scale={[0.1, 0.1, 0.1]}
-              position={[0, 2, 21.5]}
+              scale={[0.09, 0.09, 0.09]}
+              position={[0, 1.5, 21.5]}
               rotation={[0, 0, 0]}
-              physicsSize={[9, 3, 1]}
+              physicsSize={[8, 3, 1]}
               physicsPosition={[0, 0, 21.5]}             
             />
         </>
