@@ -3,6 +3,12 @@
         "generator" : "Khronos glTF Blender I/O v1.3.48",
         "version" : "2.0"
     },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -55,7 +61,7 @@
                 0,
                 0
             ],
-            "name" : "None",
+            "name" : "None.001",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -72,7 +78,7 @@
                 0,
                 0
             ],
-            "name" : "None_whitewoodpaint.jpg",
+            "name" : "None_whitewoodpaint.jpg.001",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 1,
@@ -85,7 +91,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Mesh_0",
+            "name" : "Mesh_0.001",
             "primitives" : [
                 {
                     "attributes" : {
@@ -93,13 +99,24 @@
                         "NORMAL" : 1,
                         "TEXCOORD_0" : 2
                     },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
                     "indices" : 3,
-                    "material" : 0
+                    "material" : 0,
+                    "mode" : 4
                 }
             ]
         },
         {
-            "name" : "Mesh_1",
+            "name" : "Mesh_1.001",
             "primitives" : [
                 {
                     "attributes" : {
@@ -107,8 +124,19 @@
                         "NORMAL" : 5,
                         "TEXCOORD_0" : 6
                     },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 1,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
                     "indices" : 7,
-                    "material" : 1
+                    "material" : 1,
+                    "mode" : 4
                 }
             ]
         }
@@ -125,17 +153,16 @@
         {
             "mimeType" : "image/jpeg",
             "name" : "None_baseColor",
-            "uri" : "Textures/None_baseColor.jpg"
+            "uri" : "textures/None_baseColor.jpg"
         },
         {
             "mimeType" : "image/jpeg",
-            "name" : "None_whitewoodpaint.jpg_baseColor",
-            "uri" : "Textures/None_whitewoodpaint_jpg_baseColor.jpg"
+            "name" : "None_whitewoodpaint_jpg_baseColor",
+            "uri" : "textures/None_whitewoodpaint_jpg_baseColor.jpg"
         }
     ],
     "accessors" : [
         {
-            "bufferView" : 0,
             "componentType" : 5126,
             "count" : 4,
             "max" : [
@@ -151,25 +178,21 @@
             "type" : "VEC3"
         },
         {
-            "bufferView" : 1,
             "componentType" : 5126,
             "count" : 4,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 2,
             "componentType" : 5126,
             "count" : 4,
             "type" : "VEC2"
         },
         {
-            "bufferView" : 3,
             "componentType" : 5123,
             "count" : 6,
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 4,
             "componentType" : 5126,
             "count" : 64,
             "max" : [
@@ -185,19 +208,16 @@
             "type" : "VEC3"
         },
         {
-            "bufferView" : 5,
             "componentType" : 5126,
             "count" : 64,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 6,
             "componentType" : 5126,
             "count" : 64,
             "type" : "VEC2"
         },
         {
-            "bufferView" : 7,
             "componentType" : 5123,
             "count" : 84,
             "type" : "SCALAR"
@@ -206,48 +226,18 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 48,
+            "byteLength" : 186,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 48,
-            "byteOffset" : 48
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 32,
-            "byteOffset" : 96
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 128
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 768,
-            "byteOffset" : 140
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 768,
-            "byteOffset" : 908
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 512,
-            "byteOffset" : 1676
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 168,
-            "byteOffset" : 2188
+            "byteLength" : 602,
+            "byteOffset" : 188
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2356,
+            "byteLength" : 792,
             "uri" : "scene.bin"
         }
     ]
