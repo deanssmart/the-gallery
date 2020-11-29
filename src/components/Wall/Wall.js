@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
 import { useBox } from "use-cannon";
+import { draco } from 'drei';
 
 const Wall = ({ 
     scale,
@@ -14,7 +16,8 @@ const Wall = ({
     let texture, normal;
     const size = 20;
 
-    const [model, setModel] = useState();
+    const { scene } = useLoader(GLTFLoader, modelUrl, draco());
+
     const [refFront] = useBox(() => ({ 
         type: "static", 
         args: [70, 50, 1],
@@ -41,10 +44,6 @@ const Wall = ({
         position: [0, 30, 0],
     }));
 
-
-    const newMaterial = new THREE.MeshPhysicalMaterial({
-    });
-
     texture = useMemo(() => new THREE.TextureLoader().load(mapUrl), [mapUrl]);
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
@@ -54,14 +53,20 @@ const Wall = ({
     normal.wrapS = THREE.RepeatWrapping;
     normal.wrapT = THREE.RepeatWrapping;
     normal.repeat.set(size, size);
-  
-    useEffect(() => {
-      new GLTFLoader().load(modelUrl, setModel)
-    }, [modelUrl]);
-  
-    return (
-        
-        model ? 
+
+    scene.traverse( function ( child ) {
+        if ( child.isMesh ) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            child.material.side = THREE.DoubleSide;
+            child.material.normalMap = normal;
+            child.material.map = texture;
+            child.material.metalness = 0;
+            child.material.roughness = 1;
+        }
+    })
+ 
+    return (        
             <>
                 <mesh ref={refFront}/>
                 <mesh ref={refL}/>
@@ -70,21 +75,10 @@ const Wall = ({
                 <mesh ref={refTop}/>
                 <primitive                   
                     position={position}
-                    object={model.scene}
-                    mesh={model.scene.traverse( function ( child ) {
-                        if ( child.isMesh ) {
-                            child.material = newMaterial;
-                            child.castShadow = true;
-                            child.receiveShadow = true;
-                            child.material.side = THREE.DoubleSide;
-                            child.material.normalMap = normal;
-                            child.material.map = texture;
-                            child.material.metalness = 0;
-                            child.material.roughness = 1;
-                        }
-                    })} 
+                    object={scene}
+                    dispose={null}
                 /> 
-            </> : null
+            </>
     )
   }
 
