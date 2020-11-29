@@ -4,11 +4,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useBox } from "use-cannon";
 import { draco } from 'drei';
 
-const Bench = (props) => {
+const SmallBench = (props) => {
     const [ref] = useBox(() => ({
         type: "static",
-        args: [7, 5, 0.5],
-        position: [0, 0, 22],
+        args: [4, 2, 1],
+        position: [1, 0, 20],
      }))
 
     const { nodes } = useLoader(GLTFLoader, "/assets/3D/SmallBench/scene.gltf", draco());
@@ -76,4 +76,4 @@ const Bench = (props) => {
     );
 }
 
-export default Bench;
+export default SmallBench;

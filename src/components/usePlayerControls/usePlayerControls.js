@@ -7,8 +7,7 @@ const moveFieldByKey = (key) => {
         KeyA: "left",
         KeyD: "right", 
         Space: "jump", 
-        ShiftLeft:"speed",
-        KeyF: "fly"
+        ShiftLeft:"speed"
      }
      return keys[key]
 }
@@ -20,8 +19,7 @@ const usePlayerControls = () => {
         left: false,
         right: false,
         jump: false,
-        speed: 10,
-        fly: false,
+        speed: 15
     })
 
     useEffect(() => {        
@@ -40,15 +38,9 @@ const usePlayerControls = () => {
                 case "ShiftLeft":
                     setMovement((m) => ({ 
                         ...m, 
-                        [moveFieldByKey(e.code)]: 20 
+                        [moveFieldByKey(e.code)]: 30 
                     }))
-                    return;
-                case "KeyF":
-                    setMovement((m) => ({ 
-                        ...m, 
-                        [moveFieldByKey(e.code)]: !movement.fly 
-                    }))
-                    return;                
+                    return;              
                 default: return;
             }
         }
@@ -68,7 +60,7 @@ const usePlayerControls = () => {
                 case "ShiftLeft":
                     setMovement((m) => ({ 
                         ...m, 
-                        [moveFieldByKey(e.code)]: 10 
+                        [moveFieldByKey(e.code)]: 15 
                     }))
                     return;
                 default: return;
@@ -82,8 +74,8 @@ const usePlayerControls = () => {
             document.removeEventListener("keydown", handleKeyDown)
             document.removeEventListener("keyup", handleKeyUp)
         }
-    }, [movement.fly])
-    
+    }, [])
+
     return movement
 }
 

@@ -28,9 +28,10 @@ const Overlay = () => {
     <>
     
       <App />
-        <div className={ready ? "" : "overlay"}>
-          <div className={"instructions"}>← Click the dot to center cursor
-          <br /><br />
+        {/* <div className={ready ? "" : "overlay"}> */}
+          {/* <div className={"instructions"}> Click to Start<br/>
+          <div className={"controls"}></div> */}
+        {/* <br /><br />
         Look: MOUSE<br/>  
 				Move: WASD<br/>
 				Jump: SPACE<br/>
@@ -38,9 +39,10 @@ const Overlay = () => {
 
         Toggle Night Mode: N<br/><br/>				
         Toggle Flight Mode: F<br/>
-        (Hold space to fly)<br/>        
-          </div>
-        </div>
+        (Hold space to fly)<br/>         */}
+          {/* </div>
+        </div> */}
+        <img className={ready ? "" : "overlay"} src="./assets/Images/Controls2.png"></img>
       
       <div className="dot" 
       style={{ pointerEvents: ready ? "none" : "all" }} 

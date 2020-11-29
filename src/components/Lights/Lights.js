@@ -17,13 +17,12 @@ const Lights = ({ night }) => {
                 shadowCamTop={30}
                 shadowCamL={53}
                 shadowCamR={-53}                
-            />
-
-            
+            />            
             <PointLight 
                 intensity={0.25} 
                 position={[0, 19, 13]}
             /> 
+            
             {/* liam portrait light */}
             <SpotLight 
                 position={[12, 19.5, 0]}

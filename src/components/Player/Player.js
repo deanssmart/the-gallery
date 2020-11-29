@@ -13,8 +13,7 @@ const Player = (props) => {
     left, 
     right, 
     jump, 
-    speed,
-    fly 
+    speed
   } = usePlayerControls()
   const [ref, api] = useSphere(() => ({ 
     mass: 1, 
@@ -45,8 +44,8 @@ const Player = (props) => {
     //apply the velocity to our sphere
     api.velocity.set(direction.x, velocity.current[1], direction.z)
 
-    //check if jumping and velocity in y compared to almost zero i.e we are standing or at the top of our jump 
-    if (jump && Math.abs(velocity.current[1].toFixed(2)) < (fly ? 100 : 0.01)) {
+    //to limit jump by check if jumping and velocity in y compared to almost zero i.e we are standing or at the top of our jump change value 100 to 0.01
+    if (jump && Math.abs(velocity.current[1].toFixed(2)) < 100) {
       api.velocity.set(velocity.current[0], 10, velocity.current[2])
     }
   })
