@@ -62,7 +62,7 @@ const App = () => {
           </Suspense>      
           <Player />       
         </Physics>
-        <Stats  showPanel={0} />
+        {/* <Stats  showPanel={0} /> */}
       </Canvas>
     </>
   );
