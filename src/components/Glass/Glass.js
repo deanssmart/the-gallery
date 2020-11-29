@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import React, { useMemo } from 'react';
 import * as THREE from 'three';
+import { useLoader } from 'react-three-fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { draco } from 'drei';
 
 
 const Glass = ({
@@ -9,37 +11,32 @@ const Glass = ({
     rotation,
     url
  }) => {
-    const [model, setModel] = useState();
-
+    const { scene } = useLoader(GLTFLoader, url, draco());
     const newMaterial = new THREE.MeshPhysicalMaterial({
         color: "skyblue"
       });
 
-    useEffect(() => {
-      new GLTFLoader().load(url, setModel)
-    }, [url]);
+      scene.traverse( function ( child ) {
+        if ( child.isMesh ) {   
+            child.material = newMaterial;
+            child.material.transparent = true;
+            child.material.opacity = 0.2; 
+            child.material.clearcoat = 1; 
+            child.material.roughness = 0;
+            child.material.metalness = 1;
+        }
+    })
   
-    return (
-        
-        model ? <primitive 
-                    renderOrder={1}
-                    scale={scale}
-                    position={position}
-                    rotation={rotation}
-                    object={model.scene}
-                    mesh={model.scene.traverse( function ( child ) {
-                        if ( child.isMesh ) {   
-                            child.material = newMaterial;
-                            child.material.transparent = true;
-                            child.material.opacity = 0.2; 
-                            child.material.clearcoat = 1; 
-                            child.material.roughness = 0;
-                            child.material.metalness = 1;
-                        }
-                    })} 
-                >                   
-                </primitive>  : null
-    )
+    return (        
+        <primitive 
+            renderOrder={1}
+            scale={scale}
+            position={position}
+            rotation={rotation}
+            object={scene}
+            dispose={null}
+        /> 
+    );
   }
 
   export default Glass;
