@@ -7,11 +7,11 @@ import Moon from '../Moon/Moon';
 import Building from '../Building/Building';
 import Ground from '../Ground/Ground';
 import Art from '../Art/Art';
-import Bench from '../Bench/Bench';
-import SmallBench from '../SmallBench/SmallBench';
+import Furniture from '../Furniture/Furniture';
 import Camera from '../Camera/Camera';
 import Player from '../Player/Player';
 import Lights from '../Lights/Lights';
+
 
 const App = () => {
   const [night, setNight] = useState(false)
@@ -57,9 +57,8 @@ const App = () => {
           <Suspense fallback={null}>
             <Ground /> 
             <Building />            
-            <Art />   
-            <Bench />
-            <SmallBench />                 
+            <Art />  
+            <Furniture />               
           </Suspense>      
           <Player />       
         </Physics>

@@ -25,12 +25,12 @@ const Picture = ({
   
     return (
          <primitive 
-                    scale={scale} 
-                    position={position}
-                    rotation={rotation}
-                    object={scene}                    
-                    dispose={null}
-                />
+            scale={scale} 
+            position={position}
+            rotation={rotation}
+            object={scene}                    
+            dispose={null}
+          />
     )
   }
 
