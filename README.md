@@ -1,6 +1,6 @@
 # The Gallery
 
-![app preview](./public/assets/images/The-Gallery-Preview.jpg)
+![app preview](public/assets/images/The-Gallery-Preview.jpg)
 
 ### View the app online 
 
