@@ -19,7 +19,7 @@ const Lights = ({ night, performance }) => {
                 shadowCamR={-53}                
             />            
             <PointLight 
-                intensity={performance ? 0.25 : 0.8} 
+                intensity={performance ? 0.25 : 0.6} 
                 position={[0, 19, 13]}
             /> 
             {performance ?                 
