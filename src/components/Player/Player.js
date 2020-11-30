@@ -18,13 +18,13 @@ const Player = (props) => {
   const [ref, api] = useSphere(() => ({ 
     mass: 1, 
     type: "Dynamic", 
-    position: [0, 5, 15],  
+    position: [-11, 5, 33],
+    rotation: [0, 0, Math.PI / 2],
     args: 5,
      ...props
   }))
 
-
-  const velocity = useRef([0, 0, 0])
+    const velocity = useRef([0, 0, 0])
   useEffect(() =>  {
     //update reference everytime velocity changes
     api.velocity.subscribe(v => velocity.current = v)

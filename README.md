@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# The Gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![app preview](./public/assets/images/The-Gallery-Preview.jpg)
 
-## Available Scripts
+### View the app online 
 
-In the project directory, you can run:
+Open the live app in your browser with this link: https://deanssmart.github.io/the-gallery/
 
-### `npm start`
+## Intro
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Interactive 3D art gallery to showcase some of my drawings and paintings  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Technologies
 
-### `npm test`
+- JavaScript
+- Three.js
+- React
+- react-three-fiber
+- JSX
+- HTML/CSS
+- Git (version managed)
+- Blender
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Functionality and Features
 
-### `npm run build`
+- First-person view and controls 
+- WASD movement 
+- MOUSE to look
+- SHIFT to run
+- SPACE to fly
+- N to toggle between night and day
+- P to toggle performance
+- More features will be added... so watch this space
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How to Use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Click the center dot to allow the browser control of your pointer
+- Use W to move forward, A to move left, D to move right and S to move backwards
+- Use the mouse to look in the direction you want to move
+- (If you've played any first-person shooters youll be familliar)
+- Hold SHIFT to run (there is no security guard in this gallery)
+- Hold SPACE to fly (because why not!)
+- Press N at any time to toggle the environment between night and day
+- If you have a slower laptop and the frame rate is a bit low press P, this will turn off all the spotlights on the paintings so should allow the app to runs smoother although it won't look as visually intended 
+- (I intend to bake the lighting at some point in the future)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup on your machine
 
-### `npm run eject`
+1. Create a local directory on your machine 
+2. Run the following code in your command line to navigate into that directory:   
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell 
+$ cd ~/your-directory-name-here
+```
+3. Copy the SSH key from this GitHub repository `git@github.com:deanssmart/the-gallery.git`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run the following code in your command line to clone the repo to your machine (you can change the app-name to what you desire):  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```shell 
+git clone git@github.com:deanssmart/the-gallery.git <app-name>
+```
+5. Navigate to your new app directory (the app name you just picked):
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell 
+$ cd app-name
+```
+6. Install the dependencies:
 
-## Learn More
+```shell 
+npm i
+```
+7. Run the following command to launch the app in your default browser at http://localhost:3000/:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell 
+npm start
+```
+8. Enjoy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Credits
 
-### Code Splitting
+### 3D Models (Sketchfab)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Adapted fancy picture frame from Jamie McFarlane https://skfb.ly/6QZpO 
+- Adapted square picture frame from Lonit https://skfb.ly/6WMFM
+- Adapted long picture frame from ROOFUSMAN1976 https://skfb.ly/6SKu9
+- Adapted Victorian window from expy https://skfb.ly/6qupO
+- Adapted industrial set from feivelyn https://skfb.ly/6SqIT
+- Parametric benches from decah https://skfb.ly/6qwEw & https://skfb.ly/6qvZD
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Textures
+- Grass texture from Simon Murray https://www.brusheezy.com/textures/20185-seamless-green-grass-textures
+- Marble textures from ShareTextures https://opengameart.org/users/sharetextures
+- Wall texture from Seme Design Lab http://www.texturise.club/2016/12/seamless-white-wall-paint-stucco.html

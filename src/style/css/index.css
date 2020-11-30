@@ -72,6 +72,13 @@ body {
   width: 6%; 
 }
 
+.controlsTR2 {
+  position: fixed;
+  top: 20px;
+  right: 140px;
+  width: 6%; 
+}
+
 .dot {
   position: absolute;
   top: 50%;
