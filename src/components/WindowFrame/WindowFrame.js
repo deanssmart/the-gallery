@@ -22,10 +22,10 @@ const WindowFrame = ({
         if ( child.isMesh ) { 
             child.castShadow = true;
             child.receiveShadow = true;
-            child.material.metalness = 1;
+            child.material.metalness = 0.9;
             child.material.clearcoat = 1;
             child.material.clearcoatRoughness = 0.6;
-            child.material.roughness = 1;
+            child.material.roughness = 0.9;
             child.material.map = map;
         }
     })

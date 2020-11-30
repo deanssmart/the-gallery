@@ -13,7 +13,7 @@ const WindowGlass = ({ position }) => {
       });
 
     useEffect(() => {
-      new GLTFLoader().load("/assets/3D/WindowGlass/scene.gltf", setModel)
+      new GLTFLoader().load("assets/3D/WindowGlass/scene.gltf", setModel)
     }, []);
   
     return (
