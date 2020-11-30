@@ -13,13 +13,17 @@ const WindowFrame = ({
     normalMapUrl
 
 }) => {
+    let newMaterial, map;
     const { scene } = useLoader(GLTFLoader, modelUrl, draco());
+
+    newMaterial = new THREE.MeshPhysicalMaterial();
     
-    const map = useMemo(() => new THREE.TextureLoader().load(mapUrl), [mapUrl]);
+    map = useMemo(() => new THREE.TextureLoader().load(mapUrl), [mapUrl]);
     map.flipY=false;
 
     scene.traverse( function ( child ) {
         if ( child.isMesh ) { 
+            child.material = newMaterial;
             child.castShadow = true;
             child.receiveShadow = true;
             child.material.metalness = 0.9;
