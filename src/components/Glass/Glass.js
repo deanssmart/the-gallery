@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import * as THREE from 'three';
 import { useLoader } from 'react-three-fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
