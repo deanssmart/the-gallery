@@ -15,20 +15,30 @@ import Lights from '../Lights/Lights';
 
 const App = () => {
   const [night, setNight] = useState(false)
+  const [performance, setPerformance] = useState(true)
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if(e.code === "KeyN"){
-        setNight(!night)        
+      switch(e.code) {
+        case "KeyN":
+          setNight(!night)
+          return;
+        case "KeyP":
+          setPerformance(!performance)
+          return;
+        default: return;
       }
     }
+
     document.addEventListener("keydown", handleKeyDown)
     return () => {
       document.removeEventListener("keydown", handleKeyDown)
     }
-  })  
+  }, [night, performance])  
+
 
   return (
+
     <>
       <Canvas 
         onCreated={({ gl }) => { 
@@ -51,7 +61,10 @@ const App = () => {
           </>
         }
 
-        <Lights night={night} />
+        <Lights 
+          night={night}
+          performance={performance}
+        />
              
         <Physics gravity={[0, -30, 0]}>
           <Suspense fallback={null}>
@@ -62,7 +75,7 @@ const App = () => {
           </Suspense>      
           <Player />       
         </Physics>
-        {/* <Stats  showPanel={0} /> */}
+        <Stats  showPanel={0} />
       </Canvas>
     </>
   );

@@ -3,21 +3,13 @@ import { usePlane } from "use-cannon";
 import * as THREE from 'three';
 import { Reflector } from '@react-three/drei';
 
-const Ground = (props) => {
+const Ground = () => {
     let marbleAlphaMap, marbleMap, marbleNormalMap, grassMap;
     const size = 4.6;
 
-    const [marbleRef] = usePlane(() => ({ 
+    const [ref] = usePlane(() => ({ 
         rotation: [-Math.PI / 2, 0, 0],
         position: [0, 0.1, 22],
-    }));
-    const [mirrorRef] = usePlane(() => ({ 
-        rotation: [-Math.PI / 2, 0, 0], 
-        position: [0, -0.1, 22], 
-    }));
-    const [grassRef] = usePlane(() => ({ 
-        rotation: [-Math.PI / 2, 0, 0], 
-        position: [0, -0.3, 22],  
     }));
 
     marbleMap = useMemo(() => new THREE.TextureLoader().load("/assets/Textures/BazaltMarble/BAZALT-diffuse.jpg"), []);
@@ -42,20 +34,20 @@ const Ground = (props) => {
 
     return (
         <>
-            <mesh ref={grassRef} >
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.3, 22]} >
                 <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
                 <meshLambertMaterial attach="material">
                     <primitive attach="map" object={grassMap} />
                 </meshLambertMaterial>
             </mesh>
-
-            <mesh ref={mirrorRef} >
+            
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 22]} >
                 <Reflector>
-                    <planeBufferGeometry attach="geometry" args={[70, 75]} />
+                    <planeBufferGeometry attach="geometry" args={[70, 75]}  />
                 </Reflector>
             </mesh>
 
-            <mesh ref={marbleRef} receiveShadow>
+            <mesh ref={ref} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[70, 75]} />
                 <meshPhysicalMaterial 
                     attach="material"
