@@ -1,0 +1,864 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.3.48",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                7,
+                15,
+                23,
+                31
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_mt_0"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "ind_steelglas_roof_corner_01_inst_001",
+            "rotation" : [
+                0,
+                1,
+                0,
+                7.273661441694625e-16
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006452313391491771
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_02_inst_001",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006447525811381638
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_03_inst_001",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                1,
+                0,
+                -2
+            ]
+        },
+        {
+            "children" : [
+                1,
+                2,
+                3
+            ],
+            "name" : "RootNode"
+        },
+        {
+            "children" : [
+                4
+            ],
+            "name" : "steelglass.fbx",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                5
+            ],
+            "name" : "RootNode (model correction matrix)"
+        },
+        {
+            "children" : [
+                6
+            ],
+            "name" : "RootNode (gltf orientation matrix)",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                2,
+                2,
+                1
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m"
+        },
+        {
+            "children" : [
+                8
+            ],
+            "name" : "ind_steelglas_roof_corner_01_inst_001.001",
+            "rotation" : [
+                0,
+                1,
+                0,
+                7.273661441694625e-16
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006452313391491771
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_02_inst_001.001",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006447525811381638
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_03_inst_001.001",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                1,
+                0,
+                -2
+            ]
+        },
+        {
+            "children" : [
+                9,
+                10,
+                11
+            ],
+            "name" : "RootNode.001"
+        },
+        {
+            "children" : [
+                12
+            ],
+            "name" : "steelglass.fbx.001",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                13
+            ],
+            "name" : "RootNode (model correction matrix).001"
+        },
+        {
+            "children" : [
+                14
+            ],
+            "name" : "RootNode (gltf orientation matrix).001",
+            "rotation" : [
+                -0.5000000596046448,
+                -0.5,
+                -0.5,
+                0.5000000596046448
+            ],
+            "scale" : [
+                2,
+                2,
+                1
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m.001"
+        },
+        {
+            "children" : [
+                16
+            ],
+            "name" : "ind_steelglas_roof_corner_01_inst_001.002",
+            "rotation" : [
+                0,
+                1,
+                0,
+                7.273661441694625e-16
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006452313391491771
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_02_inst_001.002",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006447525811381638
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_03_inst_001.002",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                1,
+                0,
+                -2
+            ]
+        },
+        {
+            "children" : [
+                17,
+                18,
+                19
+            ],
+            "name" : "RootNode.002"
+        },
+        {
+            "children" : [
+                20
+            ],
+            "name" : "steelglass.fbx.002",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                21
+            ],
+            "name" : "RootNode (model correction matrix).002"
+        },
+        {
+            "children" : [
+                22
+            ],
+            "name" : "RootNode (gltf orientation matrix).002",
+            "rotation" : [
+                0,
+                -0.7071068286895752,
+                -0.7071068286895752,
+                8.940699558479537e-08
+            ],
+            "scale" : [
+                2,
+                2,
+                1
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m.002"
+        },
+        {
+            "children" : [
+                24
+            ],
+            "name" : "ind_steelglas_roof_corner_01_inst_001.003",
+            "rotation" : [
+                0,
+                1,
+                0,
+                7.273661441694625e-16
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006452313391491771
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_02_inst_001.003",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                -3.9427250158041716e-06,
+                0,
+                0.0006447525811381638
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_03_inst_001.003",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                1,
+                0,
+                -2
+            ]
+        },
+        {
+            "children" : [
+                25,
+                26,
+                27
+            ],
+            "name" : "RootNode.003"
+        },
+        {
+            "children" : [
+                28
+            ],
+            "name" : "steelglass.fbx.003",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                29
+            ],
+            "name" : "RootNode (model correction matrix).003"
+        },
+        {
+            "children" : [
+                30
+            ],
+            "name" : "RootNode (gltf orientation matrix).003",
+            "rotation" : [
+                0.49999991059303284,
+                -0.5000001192092896,
+                -0.5000001192092896,
+                -0.49999991059303284
+            ],
+            "scale" : [
+                2,
+                2,
+                1
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "ind_steel_window_01_mt",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "metallicFactor" : 1,
+                "roughnessFactor" : 1
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_mt_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3,
+                        "TEXCOORD_2" : 4,
+                        "TEXCOORD_3" : 5
+                    },
+                    "indices" : 6,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 7,
+                        "NORMAL" : 8,
+                        "TEXCOORD_0" : 9,
+                        "TEXCOORD_1" : 10,
+                        "TEXCOORD_2" : 11,
+                        "TEXCOORD_3" : 12
+                    },
+                    "indices" : 6,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 13,
+                        "NORMAL" : 14,
+                        "TEXCOORD_0" : 15,
+                        "TEXCOORD_1" : 16,
+                        "TEXCOORD_2" : 17,
+                        "TEXCOORD_3" : 18
+                    },
+                    "indices" : 6,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "ind_steelglas_roof_corner_01_inst_001_ind_steel_window_01_m.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 19,
+                        "NORMAL" : 20,
+                        "TEXCOORD_0" : 21,
+                        "TEXCOORD_1" : 22,
+                        "TEXCOORD_2" : 23,
+                        "TEXCOORD_3" : 24
+                    },
+                    "indices" : 6,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 2741,
+            "max" : [
+                306.0311279296875,
+                305.13555908203125,
+                306.0311279296875
+            ],
+            "min" : [
+                -0.82257080078125,
+                -0.967315673828125,
+                -0.8224868774414062
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5123,
+            "count" : 6258,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 2741,
+            "max" : [
+                306.0311279296875,
+                305.13555908203125,
+                306.0311279296875
+            ],
+            "min" : [
+                -0.82257080078125,
+                -0.967315673828125,
+                -0.8224868774414062
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 2741,
+            "max" : [
+                306.0311279296875,
+                305.13555908203125,
+                306.0311279296875
+            ],
+            "min" : [
+                -0.82257080078125,
+                -0.967315673828125,
+                -0.8224868774414062
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5126,
+            "count" : 2741,
+            "max" : [
+                306.0311279296875,
+                305.13555908203125,
+                306.0311279296875
+            ],
+            "min" : [
+                -0.82257080078125,
+                -0.967315673828125,
+                -0.8224868774414062
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 20,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 21,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 22,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 23,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 24,
+            "componentType" : 5126,
+            "count" : 2741,
+            "type" : "VEC2"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 32892
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 65784
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 87712
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 109640
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 131568
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12516,
+            "byteOffset" : 153496
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 166012
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 198904
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 231796
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 253724
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 275652
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 297580
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 319508
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 352400
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 385292
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 407220
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 429148
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 451076
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 473004
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32892,
+            "byteOffset" : 505896
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 538788
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 560716
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 582644
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21928,
+            "byteOffset" : 604572
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 626500,
+            "uri" : "scene.bin"
+        }
+    ]
+}
