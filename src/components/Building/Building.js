@@ -48,7 +48,7 @@ const Building = () => {
                 position={[0, 27, 13.2]}
                 rotation={[0, 0, 0]}
                 modelUrl={"/assets/3D/RoofNoGlass/scene.gltf"}
-                mapUrl={"assets/3D/RoofNoGlass/Textures/Material_49_baseColor.png"}
+                mapUrl={"/assets/3D/RoofNoGlass/Textures/Material_49_baseColor.png"}
             />
             <Glass            
                 scale={[2.7, 2.7, 2.7]}
