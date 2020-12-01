@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/the-gallery/static/css/main.acf09d1a.chunk.css",
-    "main.js": "/the-gallery/static/js/main.e624c48b.chunk.js",
-    "main.js.map": "/the-gallery/static/js/main.e624c48b.chunk.js.map",
+    "main.css": "/the-gallery/static/css/main.fb9992e7.chunk.css",
+    "main.js": "/the-gallery/static/js/main.39b1b9af.chunk.js",
+    "main.js.map": "/the-gallery/static/js/main.39b1b9af.chunk.js.map",
     "runtime-main.js": "/the-gallery/static/js/runtime-main.15ad539d.js",
     "runtime-main.js.map": "/the-gallery/static/js/runtime-main.15ad539d.js.map",
     "static/js/2.b5315589.chunk.js": "/the-gallery/static/js/2.b5315589.chunk.js",
@@ -12,14 +12,14 @@
     "static/js/4.8d111bc4.chunk.js": "/the-gallery/static/js/4.8d111bc4.chunk.js",
     "static/js/4.8d111bc4.chunk.js.map": "/the-gallery/static/js/4.8d111bc4.chunk.js.map",
     "index.html": "/the-gallery/index.html",
-    "static/css/main.acf09d1a.chunk.css.map": "/the-gallery/static/css/main.acf09d1a.chunk.css.map",
+    "static/css/main.fb9992e7.chunk.css.map": "/the-gallery/static/css/main.fb9992e7.chunk.css.map",
     "static/js/2.b5315589.chunk.js.LICENSE.txt": "/the-gallery/static/js/2.b5315589.chunk.js.LICENSE.txt",
     "static/media/index.css": "/the-gallery/static/media/Sacramento-Regular.8e499a8c.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.15ad539d.js",
     "static/js/2.b5315589.chunk.js",
-    "static/css/main.acf09d1a.chunk.css",
-    "static/js/main.e624c48b.chunk.js"
+    "static/css/main.fb9992e7.chunk.css",
+    "static/js/main.39b1b9af.chunk.js"
   ]
 }
