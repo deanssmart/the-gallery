@@ -14,7 +14,7 @@ const WindowFrame = ({
 
 }) => {
     let newMaterial, map;
-    const { scene } = useLoader(GLTFLoader, modelUrl, draco());
+    const { scene } = useLoader(GLTFLoader, modelUrl, draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
 
     newMaterial = new THREE.MeshPhysicalMaterial();
     

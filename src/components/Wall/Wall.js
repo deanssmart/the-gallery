@@ -16,7 +16,7 @@ const Wall = ({
     let texture, normal;
     const size = 20;
 
-    const { scene } = useLoader(GLTFLoader, modelUrl, draco());
+    const { scene } = useLoader(GLTFLoader, modelUrl, draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
 
     const [refFront] = useBox(() => ({ 
         type: "static", 

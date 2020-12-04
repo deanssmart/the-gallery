@@ -19,7 +19,7 @@ const Bench = ({
         position: physicsPosition
      }))
 
-    const { scene } = useLoader(GLTFLoader, url, draco());
+    const { scene } = useLoader(GLTFLoader, url, draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
 
     scene.traverse( function ( child ) {
       if ( child.isMesh ) {                                     

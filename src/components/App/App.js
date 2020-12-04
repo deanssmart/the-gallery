@@ -14,7 +14,7 @@ import Lights from '../Lights/Lights';
 
 
 const App = () => {
-  const [night, setNight] = useState(false)
+  const [night, setNight] = useState(true)
   const [performance, setPerformance] = useState(true)
 
   useEffect(() => {
