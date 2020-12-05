@@ -52,7 +52,7 @@ const App = () => {
           <>
             <Stars />
             <Moon position={[110, 170, -250]} />
-            <fog attach="fog" args={["black", 30, 250]}/>
+            <fog attach="fog" args={["#272730", 30, 250]}/>
           </>
           : 
           <>
