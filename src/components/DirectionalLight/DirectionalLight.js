@@ -9,7 +9,7 @@ const DirectionalLight = ({
     shadowCamBot,
     shadowCamTop,
     shadowCamL,
-    shadowCamR,
+    shadowCamR
 }) => {
 
     const light = useMemo(() => new THREE.DirectionalLight(), [])

@@ -51,7 +51,9 @@ const App = () => {
         {night ? 
           <>
             <Stars />
-            <Moon position={[110, 170, -250]} />
+             <Suspense fallback={null}>
+                <Moon />
+             </Suspense>
             <fog attach="fog" args={["#272730", 30, 250]}/>
           </>
           : 
