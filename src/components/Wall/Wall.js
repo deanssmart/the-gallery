@@ -1,9 +1,7 @@
 import React, { useMemo } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useBox } from '@react-three/cannon';
-import { draco } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 
 const Wall = ({ 
     scale,
@@ -16,7 +14,7 @@ const Wall = ({
     let texture, normal;
     const size = 20;
 
-    const { scene } = useLoader(GLTFLoader, modelUrl, draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
+    const { scene } = useGLTF(modelUrl)
 
     const [refFront] = useBox(() => ({ 
         type: "static", 

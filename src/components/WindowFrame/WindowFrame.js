@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
-import { useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { draco } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 
 const WindowFrame = ({ 
     scale,
@@ -14,7 +12,7 @@ const WindowFrame = ({
 
 }) => {
     let newMaterial, map;
-    const { scene } = useLoader(GLTFLoader, modelUrl, draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
+    const { scene } = useGLTF(modelUrl)
 
     newMaterial = new THREE.MeshPhysicalMaterial();
     

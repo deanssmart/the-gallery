@@ -1,12 +1,9 @@
 import React from 'react';
-import { useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { draco } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 
 const Moon = () => {
 
-
-    const { scene } = useLoader(GLTFLoader, "assets/3D/Moon/scene.gltf", draco("https://www.gstatic.com/draco/versioned/decoders/1.4.0/"));
+    const { scene } = useGLTF("assets/3D/Moon/scene.gltf")
 
     console.log(scene);
     scene.traverse( function ( child ) {
