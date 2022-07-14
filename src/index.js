@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './style/css/index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
-import Loading from './components/Loading/Loading';
 
 const Overlay = () => {
   const [ready, setReady] = useState(false)
@@ -35,7 +34,6 @@ const Overlay = () => {
       <div className="dot" 
       style={{ pointerEvents: ready ? "none" : "all" }} 
       />
-      <Loading />
       </>
   )
 }
