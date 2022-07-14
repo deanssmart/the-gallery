@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, { useEffect, useRef } from 'react';
-import { useSphere } from 'use-cannon';
-import { useThree, useFrame } from 'react-three-fiber';
+import { useSphere } from '@react-three/cannon';
+import { useThree, useFrame } from '@react-three/fiber';
 import PointerLockControls from '../PointerLockControls/PointerLockControls'
 import usePlayerControls from '../usePlayerControls/usePlayerControls'
 

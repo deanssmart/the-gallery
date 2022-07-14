@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useBox } from "use-cannon";
-import { draco } from 'drei';
+import { useBox } from '@react-three/cannon';
+import { draco } from '@react-three/drei';
 
 const Wall = ({ 
     scale,

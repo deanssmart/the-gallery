@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { draco } from 'drei';
+import { draco } from '@react-three/drei';
 
 const WindowFrame = ({ 
     scale,

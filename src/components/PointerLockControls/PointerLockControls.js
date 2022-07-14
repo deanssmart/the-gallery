@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { extend, useThree } from 'react-three-fiber';
+import { extend, useThree } from '@react-three/fiber';
 import { PointerLockControls as PointerLockControlsExt } from 'three/examples/jsm/controls/PointerLockControls';
 
 extend({ PointerLockControlsExt })

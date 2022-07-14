@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useBox } from "use-cannon";
+import { useBox } from '@react-three/cannon';
 import * as THREE from 'three';
 
 const Display = ({ position, size }) => {

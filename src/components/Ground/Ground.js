@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { usePlane } from "use-cannon";
+import { usePlane } from '@react-three/cannon';
 import * as THREE from 'three';
 import { Reflector } from '@react-three/drei';
 

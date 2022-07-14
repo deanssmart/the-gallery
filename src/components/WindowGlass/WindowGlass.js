@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
 

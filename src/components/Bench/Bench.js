@@ -1,8 +1,8 @@
 import React from 'react';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useBox } from "use-cannon";
-import { draco } from 'drei';
+import { useBox } from '@react-three/cannon';
+import { draco } from '@react-three/drei';
 
 const Bench = ({
   url,
